@@ -28,9 +28,10 @@ export function Navbar() {
         <div className="text-xl font-semibold tracking-widest">
           EMANUEL DELLA PIA
         </div>
-        <ModeToggle />
         {/* Menu */}
-        <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+        <div className="flex items-center gap-2">
+          <ModeToggle />
+          <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <DropdownMenuTrigger asChild>
             <button
               className={`p-2 rounded-md transition-colors ${
@@ -47,6 +48,7 @@ export function Navbar() {
             <DropdownMenuItem>Videoclips</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        </div>
       </div>
     </nav>
   );

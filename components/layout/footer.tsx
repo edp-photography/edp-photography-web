@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="w-full px-6 py-8 flex flex-col items-center gap-4 lg:flex-row lg:relative">
+    <footer className="w-full px-6 py-6 flex flex-col items-center gap-4 lg:flex-row lg:relative">
       {/* Copyright - order-1 on mobile, order-first on lg */}
       <AppLink
         href="/"
