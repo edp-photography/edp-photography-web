@@ -1,6 +1,6 @@
-import { Footer } from "@/components/layout/footer";
-import { Headroom } from "@/components/layout/headroom";
-import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/app/_components/footer";
+import { Navbar } from "@/app/_components/navbar";
+import { Headroom } from "@/components/headroom";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist_Mono, Lato } from "next/font/google";
