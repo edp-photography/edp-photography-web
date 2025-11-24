@@ -1,4 +1,4 @@
-import { FOOTER_HEIGHT_DESKTOP, NAVBAR_HEIGTH } from "@/constants/layout";
+import { FOOTER_HEIGHT, NAVBAR_HEIGTH } from "@/constants/layout";
 
 export default function ContactPage() {
   return (
@@ -6,7 +6,7 @@ export default function ContactPage() {
       <section
         className="pt-32 pb-16"
         style={{
-          minHeight: `calc(100vh - ${FOOTER_HEIGHT_DESKTOP}px)`,
+          minHeight: `calc(100vh - ${FOOTER_HEIGHT}px)`,
         }}
       >
         <div style={{ height: `${NAVBAR_HEIGTH}px` }} />

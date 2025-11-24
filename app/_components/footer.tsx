@@ -1,37 +1,63 @@
-import { AppLink } from "@/components/app-link";
+import { Container } from "@/components/container";
+import { Link } from "@/components/link";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="w-full px-6 py-6 flex flex-col items-center gap-4 lg:flex-row lg:relative">
+    <Container
+      component="footer"
+      className="w-full py-4 flex flex-col items-center gap-4 lg:flex-row lg:justify-between"
+    >
       {/* Copyright - order-1 on mobile, order-first on lg */}
-      <AppLink
+      <Link
         href="/"
-        className="text-md font-bold tracking-widest order-3 lg:order-1"
+        underline="none"
+        variant="h6"
+        className="font-bold p-2 order-3 lg:order-1"
       >
         © EMANUEL DELLA PIA
-      </AppLink>
+      </Link>
 
-      {/* Social Links - order-2 on mobile, absolute centered on lg */}
-      <div className="flex gap-1 order-1 lg:order-2 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-        <AppLink external href="https://instagram.com">
+      {/* Social Links - order-2 on mobile, centered on lg */}
+      <div className="flex gap-1 order-1 lg:order-2">
+        <Link
+          external
+          href="https://instagram.com"
+          variant="inherit"
+          underline="none"
+          className="p-2"
+        >
           <FaInstagram className="size-6" />
-        </AppLink>
-        <AppLink external href="https://www.youtube.com/">
+        </Link>
+        <Link
+          external
+          href="https://www.youtube.com/"
+          variant="inherit"
+          underline="none"
+          className="p-2"
+        >
           <FaYoutube className="size-6" />
-        </AppLink>
-        <AppLink external href="https://www.facebook.com/">
+        </Link>
+        <Link
+          external
+          href="https://www.facebook.com/"
+          variant="inherit"
+          underline="none"
+          className="p-2"
+        >
           <FaFacebookF className="size-5" />
-        </AppLink>
+        </Link>
       </div>
 
       {/* Links - order-3 on mobile, order-last on lg (right) */}
-      <AppLink
+      <Link
         href="/contact"
-        className="text-md font-bold tracking-widest order-2 lg:order-3 lg:ml-auto"
+        underline="none"
+        variant="h6"
+        className="font-bold p-2 order-3 lg:order-3"
       >
         CONTACT
-      </AppLink>
-    </footer>
+      </Link>
+    </Container>
   );
 }

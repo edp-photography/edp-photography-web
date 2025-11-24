@@ -12,7 +12,7 @@ export default function AboutPage() {
           {/* Quote and Content */}
           <div className="order-2 md:order-1">
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-serif italic leading-tight mb-8 pl-8 md:pl-12 text-right">
-              Photography is the story I fail to put into words.
+              &ldquo;Photography is the story I fail to put into words.&rdquo;
             </blockquote>
 
             {/* Content Sections */}
