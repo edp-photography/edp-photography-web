@@ -21,23 +21,6 @@ export function Gallery() {
             fill
             style={{ objectFit: "cover" }}
           />
-          {/* Overlay */}
-          <div
-            className="
-                      absolute inset-0 flex flex-col justify-end p-4
-                      bg-linear-to-t from-black/80 via-black/30 to-transparent
-                      opacity-0 transition-opacity duration-200
-                      group-hover:opacity-100
-                      group-active:opacity-100
-                    "
-          >
-            <span className="text-white text-sm font-medium">
-              {galleryImage.title}
-            </span>
-            <span className="text-white text-xs opacity-90">
-              {galleryImage.description}
-            </span>
-          </div>
         </div>
       ))}
     </section>

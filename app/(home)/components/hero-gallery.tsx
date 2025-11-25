@@ -1,8 +1,6 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
-
+import { Container } from "@/components/container";
 import {
   Carousel,
   CarouselApi,
@@ -11,7 +9,9 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const images = [
   "/images/hero-gallery/1.jpg",
@@ -69,28 +69,31 @@ export function HeroGallery() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute bottom-10 right-40 z-10 flex gap-3">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full border border-white transition-colors ${
-                current === index ? "bg-white" : "bg-transparent"
-              }`}
-              aria-label={`Go to image ${index + 1}`}
-            />
-          ))}
-        </div>
       </Carousel>
-      {/* Gradient overlays */}
-      {/* Scroll Hint */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-black/60 to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/60 to-transparent pointer-events-none" />
-      <ChevronDown
-        className="absolute bottom-4 left-1/2 h-18 w-18 text-white motion-safe:animate-bounce-fade"
-        strokeWidth={0.5}
-        aria-hidden
-      />
+      <div className="absolute inset-0 overlay-neutral-y pointer-events-none" />
+      <Container className="absolute bottom-0 left-0 right-0">
+        <div className="flex items-center">
+          <div className="flex-1 flex justify-center">
+            <ChevronDown
+              className="h-18 w-18 text-white motion-safe:animate-bounce-fade"
+              strokeWidth={0.5}
+              aria-hidden
+            />
+          </div>
+          <div className="flex gap-3">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`w-2 h-2 rounded-full border border-white transition-colors ${
+                  current === index ? "bg-white" : "bg-transparent"
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
     </section>
   );
 }

@@ -3,16 +3,15 @@
 import { useEffect, useState } from "react";
 
 export function useScrollPosition() {
-  const [isPastHero, setIsPastHero] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const threshold = window.innerHeight; // 100vh
     let ticking = false;
 
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setIsPastHero(window.scrollY > threshold);
+          setScrollY(window.scrollY);
           ticking = false;
         });
         ticking = true;
@@ -26,5 +25,5 @@ export function useScrollPosition() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return isPastHero;
+  return scrollY;
 }

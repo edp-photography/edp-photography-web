@@ -156,3 +156,21 @@
     transform: translateY(-100%);
   }
 }
+
+@layer utilities {
+  .overlay-neutral-y {
+    background: linear-gradient(
+      rgb(76, 76, 76) 0%,
+      rgba(76, 76, 76, 0) 15%,
+      rgba(76, 76, 76, 0) 70%,
+      rgb(76, 76, 76) 100%
+    );
+  }
+  .overlay-white-y {
+    background: linear-gradient(
+      #fff 0%,
+      hsla(0, 0%, 100%, 0.8) 60%,
+      hsla(0, 0%, 100%, 0) 100%
+    );
+  }
+}

@@ -21,16 +21,24 @@ const PAGES = [
 ];
 
 export function Navbar() {
-  const isPastHero = useScrollPosition();
+  const scrollY = useScrollPosition();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const isPastTransparentPoint =
+    typeof window !== "undefined"
+      ? scrollY > Math.round(window.innerHeight * 0.7)
+      : false;
 
   return (
     <nav
       className={cn(
-        "bg-background text-foreground transition-colors duration-300",
-        !isPastHero && "dark bg-transparent"
+        "relative bg-background text-foreground transition-colors duration-300",
+        isDropdownOpen &&
+          "overlay-white-y dark:bg-transparent dark:text-background",
+        !isPastTransparentPoint && !isDropdownOpen && "bg-transparent"
       )}
     >
-      <Container className="flex justify-between items-baseline py-4">
+      <Container className="relative flex justify-between items-baseline py-4">
         {/* Logo/Name */}
         <Link href="/" className="py-2" underline="none">
           <Typography
@@ -43,14 +51,22 @@ export function Navbar() {
           </Typography>
         </Link>
         {/* Menu */}
-        <NavigationDropdown />
+        <NavigationDropdownDesktop
+          isOpen={isDropdownOpen}
+          setIsOpen={setIsDropdownOpen}
+        />
       </Container>
     </nav>
   );
 }
 
-function NavigationDropdown() {
-  const [isOpen, setIsOpen] = useState(false);
+function NavigationDropdownDesktop({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}) {
   const pathname = usePathname();
 
   const activePage = PAGES.find((page) => page.path === pathname);
@@ -59,7 +75,7 @@ function NavigationDropdown() {
   return (
     <div className="flex flex-col items-end">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <CollapsibleTrigger className="flex items-center gap-2 cursor-pointer group py-1 border-b border-foreground">
+        <CollapsibleTrigger className="flex items-center gap-2 cursor-pointer group py-1 border-b border-current">
           <Typography
             variant="h6"
             component="h2"
