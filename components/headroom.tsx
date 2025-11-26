@@ -1,34 +1,24 @@
 "use client";
 
-import _Headroom from "headroom.js";
+import HeadroomJs, { HeadroomOptions } from "headroom.js";
 import { ReactNode, useEffect, useRef } from "react";
 
-type HeadroomProps = {
+export type HeadroomProps = {
   children: ReactNode;
+  options?: HeadroomOptions;
 };
 
-const options = {
-  offset: {
-    up: 100,
-    down: 50,
-  },
-  tolerance: {
-    up: 5,
-    down: 0,
-  },
-};
-
-export function Headroom({ children }: HeadroomProps) {
+export function Headroom({ children, options }: HeadroomProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
 
-    const headroom = new _Headroom(ref.current, options);
+    const headroom = new HeadroomJs(ref.current, options);
 
     headroom.init();
     return () => headroom.destroy();
-  }, []);
+  }, [options]);
 
   return <div ref={ref}>{children}</div>;
 }

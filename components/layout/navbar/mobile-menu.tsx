@@ -35,7 +35,7 @@ export function MobileMenu({ isOpen, setIsOpen, className }: Props) {
           className="p-2 self-end"
           aria-label={toggleLabel}
         >
-          <ToggleIcon className="h-10 w-10" />
+          <ToggleIcon className="size-10" />
         </button>
         {/* Navigation Items */}
         <nav className={cn(!isOpen && "hidden", isOpen && "w-full max-w-xs")}>

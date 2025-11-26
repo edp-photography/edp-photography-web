@@ -1,4 +1,3 @@
-import { Headroom } from "@/components/headroom";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { NavbarSpacer } from "@/components/layout/navbar/navbar-spacer";
@@ -36,9 +35,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
-          <Headroom>
-            <Navbar />
-          </Headroom>
+          <Navbar />
           <main
             style={{
               minHeight: `calc(100vh - ${FOOTER_HEIGHT}px)`,

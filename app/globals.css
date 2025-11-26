@@ -168,9 +168,10 @@
   }
   .overlay-white-y {
     background: linear-gradient(
-      #fff 0%,
+      180deg,
+      #fff 0,
       hsla(0, 0%, 100%, 0.8) 60%,
-      hsla(0, 0%, 100%, 0) 100%
+      hsla(0, 0%, 100%, 0)
     );
   }
 }

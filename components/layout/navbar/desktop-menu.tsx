@@ -54,6 +54,7 @@ export function DesktopMenu({
               variant="h6"
               className="font-bold"
               underline="none"
+              onClick={() => setIsOpen(!isOpen)}
             >
               {page.title}
             </Link>
