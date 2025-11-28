@@ -1,4 +1,3 @@
-import { Container } from "@/components/container";
 import Image from "next/image";
 import { Typography } from "../typohraphy";
 
@@ -44,7 +43,7 @@ export function GalleryImage({
 
       {/* Desktop overlay - appears on hover */}
       <div className="absolute inset-x-0 bottom-0 hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <Container className="bg-linear-to-t from-black/90 via-black/70 to-transparent py-6">
+        <div className="bg-linear-to-t from-black/90 via-black/70 to-transparent p-6">
           <Typography
             variant="overline"
             component="h3"
@@ -60,11 +59,11 @@ export function GalleryImage({
           >
             {description}
           </Typography>
-        </Container>
+        </div>
       </div>
 
       {/* Mobile text - always visible below image */}
-      <Container className="block sm:hidden py-6">
+      <div className="block sm:hidden p-6">
         <Typography variant="overline" component="h3" className="mt-0">
           {title}
         </Typography>
@@ -76,7 +75,7 @@ export function GalleryImage({
         >
           {description}
         </Typography>
-      </Container>
+      </div>
     </div>
   );
 }
