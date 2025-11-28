@@ -45,7 +45,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <Footer />
-          <div className="fixed bottom-5 right-5">
+          <div className="fixed bottom-44 sm:bottom-20 right-5">
             <ModeToggle />
           </div>
         </ThemeProvider>
