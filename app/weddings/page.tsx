@@ -1,5 +1,6 @@
-import { WeddingGallery } from "./components/wedding-gallery";
+import { PhotoGallery } from "@/components/photo-gallery";
+import { weddingGallery } from "@/lib/wedding-gallery";
 
 export default function WeddingsPage() {
-  return <WeddingGallery />;
+  return <PhotoGallery photos={weddingGallery} />;
 }

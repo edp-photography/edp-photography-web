@@ -1,49 +1,44 @@
 "use client";
 
-import { weddingGallery } from "@/lib/wedding-gallery";
-import Image from "next/image";
-
 import {
+  Photo,
   RenderImageContext,
   RenderImageProps,
   RowsPhotoAlbum,
 } from "react-photo-album";
 import "react-photo-album/rows.css";
+import { GalleryImage } from "./gallery-image";
+
+interface IPhoto extends Photo {
+  title?: string;
+  description?: string;
+  blurDataURL?: string;
+}
 
 function renderNextImage(
   { alt = "", title, sizes }: RenderImageProps,
-  { photo, width, height, index }: RenderImageContext
+  { photo, width, height, index }: RenderImageContext<IPhoto>
 ) {
   return (
-    <div
-      style={{
-        width: "100%",
-        position: "relative",
-        aspectRatio: `${width} / ${height}`,
-      }}
-    >
-      <Image
-        fill
-        src={photo}
-        alt={alt}
-        title={title}
-        sizes={sizes}
-        placeholder={"blurDataURL" in photo ? "blur" : undefined}
-        priority={index < 3}
-      />
-    </div>
+    <GalleryImage
+      alt={alt}
+      title={title}
+      description={photo.description}
+      sizes={sizes}
+      src={photo.src}
+      width={width}
+      height={height}
+      priority={index < 3}
+      blurDataURL={photo.blurDataURL}
+    />
   );
 }
 
-export function WeddingGallery() {
-  const photos = weddingGallery.map((image) => ({
-    src: image.url,
-    width: image.width,
-    height: image.height,
-    alt: image.title,
-    title: image.title,
-  }));
+type PhotoGalleryProps = {
+  photos: IPhoto[];
+};
 
+export function PhotoGallery({ photos }: PhotoGalleryProps) {
   return (
     <>
       <RowsPhotoAlbum
