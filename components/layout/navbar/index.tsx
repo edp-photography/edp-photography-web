@@ -8,6 +8,7 @@ import { useKeyPress } from "@/hooks/use-key-press";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { DesktopMenu } from "./desktop-menu";
@@ -15,11 +16,11 @@ import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
   const scrollY = useScrollPosition();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const handleEscape = useCallback((pressed: boolean) => {
     if (pressed) {
-      setIsDropdownOpen(false);
+      setOpen(false);
     }
   }, []);
 
@@ -30,8 +31,7 @@ export function Navbar() {
       ? scrollY > Math.round(window.innerHeight * 0.7)
       : false;
 
-  const isTransparent =
-    pathname === "/" && !isPastTransparentPoint && !isDropdownOpen;
+  const isTransparent = pathname === "/" && !isPastTransparentPoint && !open;
 
   const headroomOptions = useMemo<HeadroomProps["options"]>(
     () => ({
@@ -43,44 +43,56 @@ export function Navbar() {
         up: 5,
         down: 0,
       },
-      onUnpin: () => setIsDropdownOpen(false),
+      onUnpin: () => setOpen(false),
     }),
     []
   );
 
   return (
-    <Headroom options={headroomOptions}>
-      <Container
-        component="nav"
-        className={cn("flex justify-between items-center sm:items-baseline", {
-          "overlay-white-y dark:text-background": isDropdownOpen,
-          "bg-transparent text-background dark:text-foreground": isTransparent,
-          "bg-background": !isDropdownOpen && !isTransparent,
-        })}
-      >
-        {/* Logo/Name */}
-        <Link href={routes.home} className="py-2" underline="none">
-          <Typography
-            variant="h4"
-            component="h1"
-            disableGutters
-            className="font-bold"
+    <nav>
+      <Headroom options={headroomOptions}>
+        <Container
+          className={cn("flex justify-between items-center sm:items-baseline", {
+            "overlay-white-y dark:text-background": open,
+            "bg-transparent text-background dark:text-foreground":
+              isTransparent,
+            "bg-background": !open && !isTransparent,
+          })}
+        >
+          {/* Logo/Name */}
+          <Link href={routes.home} className="py-2" underline="none">
+            <Typography
+              variant="h4"
+              component="h1"
+              disableGutters
+              className="font-bold"
+            >
+              EMANUEL DELLA PIA
+            </Typography>
+          </Link>
+          {/* Menu */}
+          <DesktopMenu
+            className="max-sm:hidden"
+            isOpen={open}
+            setIsOpen={setOpen}
+          />
+          <button
+            onClick={() => setOpen(true)}
+            className="inline-block p-2 sm:hidden"
+            aria-label="Toggle navigation"
+            aria-expanded={open}
+            aria-controls="mobileMenu"
           >
-            EMANUEL DELLA PIA
-          </Typography>
-        </Link>
-        {/* Menu */}
-        <DesktopMenu
-          className="max-sm:hidden"
-          isOpen={isDropdownOpen}
-          setIsOpen={setIsDropdownOpen}
-        />
+            <Menu className="size-10" />
+          </button>
+        </Container>
         <MobileMenu
+          id="mobileMenu"
           className="sm:hidden"
-          isOpen={isDropdownOpen}
-          setIsOpen={setIsDropdownOpen}
+          isOpen={open}
+          setIsOpen={setOpen}
         />
-      </Container>
-    </Headroom>
+      </Headroom>
+    </nav>
   );
 }

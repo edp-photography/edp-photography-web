@@ -13,25 +13,26 @@ const iconMap: Record<(typeof contact.socials)[number]["icon"], IconType> = {
 export function SocialLinks({
   className,
   ...props
-}: Omit<React.HTMLAttributes<HTMLDivElement>, "children">) {
+}: Omit<React.HTMLAttributes<HTMLUListElement>, "children">) {
   return (
-    <div className={cn("flex gap-1", className)} {...props}>
+    <ul className={cn("flex gap-1", className)} {...props}>
       {contact.socials.map((social) => {
         const Icon = iconMap[social.icon];
         return (
-          <Link
-            key={social.name}
-            external
-            href={social.url}
-            variant="inherit"
-            underline="none"
-            className="p-2"
-            aria-label={social.name}
-          >
-            <Icon className="size-6" />
-          </Link>
+          <li key={social.name}>
+            <Link
+              external
+              href={social.url}
+              variant="inherit"
+              underline="none"
+              className="inline-block p-2"
+              aria-label={social.name}
+            >
+              <Icon className="size-6" />
+            </Link>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }

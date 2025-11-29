@@ -158,6 +158,10 @@
 }
 
 @layer utilities {
+  .container-fluid {
+    @apply w-full px-7 2xl:px-26;
+  }
+
   .overlay-neutral-y {
     background: linear-gradient(
       rgb(76, 76, 76) 0%,
