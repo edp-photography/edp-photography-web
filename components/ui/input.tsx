@@ -15,9 +15,9 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
         "font-sans text-sm file:text-sm file:font-medium placeholder:text-muted-foreground file:text-foreground",
         /* Visual styles / Appearance */
         "bg-transparent dark:bg-input/30 file:bg-transparent",
-        "border-b border-foreground file:border-0 rounded-0",
+        "border-b border-foreground/30 file:border-0 rounded-0",
         /* Interactivity */
-        "outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+        "outline-none focus-visible:border-foreground focus-visible:ring-ring/50 focus-visible:ring-[3px]",
         "selection:bg-primary selection:text-primary-foreground",
         /* Transitions & animations */
         "transition-colors",
