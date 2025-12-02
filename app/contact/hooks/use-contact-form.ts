@@ -6,34 +6,18 @@ import * as z from "zod";
 
 const contactSchema = z.object({
   name: z
-    .string()
-    .min(1, "Name is required")
-    .min(2, "Name must be at least 2 characters")
+    .string("Name is required")
     .max(100, "Name must not exceed 100 characters")
-    .regex(
-      /^[a-zA-ZÀ-ÿ\s'-]+$/,
-      "Name can only contain letters, spaces, hyphens, and apostrophes"
-    )
     .trim(),
   email: z
-    .string()
-    .min(1, "Email is required")
     .email("Please enter a valid email address")
+    .min(1, "Email is required")
     .max(254, "Email must not exceed 254 characters")
     .toLowerCase()
     .trim(),
-  phone: z
-    .string()
-    .optional()
-    .transform((val) => val?.replace(/\s+/g, "") || "")
-    .refine(
-      (val) => !val || /^\+?[1-9]\d{1,14}$/.test(val),
-      "Please enter a valid phone number (e.g., +420777073441)"
-    ),
+  phone: z.string().optional(),
   message: z
-    .string()
-    .min(1, "Message is required")
-    .min(10, "Message must be at least 10 characters")
+    .string("Message is required")
     .max(1000, "Message must not exceed 1000 characters")
     .trim(),
 });

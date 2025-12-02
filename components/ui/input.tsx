@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { typography } from "@/lib/variants/typography";
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
@@ -9,10 +10,12 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
       data-slot="input"
       className={cn(
         /* Layout */
-        "w-full min-w-0 h-9 px-3 py-1 file:inline-flex file:h-7",
+        "w-full min-w-0 h-9 px-3 py-1 file:h-7",
         /* Positioning */
+        "file:inline-flex",
         /* Typography */
-        "font-sans text-sm file:text-sm file:font-medium placeholder:text-muted-foreground file:text-foreground",
+        typography({ variant: "body1", disableGutters: true }),
+        "file:text-sm file:font-medium placeholder:text-muted-foreground file:text-foreground",
         /* Visual styles / Appearance */
         "bg-transparent dark:bg-input/30 file:bg-transparent",
         "border-b border-foreground/30 file:border-0 rounded-0",
