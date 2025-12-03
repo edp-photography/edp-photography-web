@@ -6,4 +6,5 @@ export const routes = {
   videoclips: "/videoclips",
   workshops: "/workshops",
   contact: "/contact",
+  calendars: "/calendars",
 };

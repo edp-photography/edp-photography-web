@@ -43,19 +43,20 @@ export function GalleryImage({
 
       {/* Desktop overlay - appears on hover */}
       <div className="absolute inset-x-0 bottom-0 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="bg-linear-to-t from-black/90 via-black/70 to-transparent p-6">
+        <div className="bg-linear-to-t from-black/90 via-black/70 to-transparent p-6 text-background dark:text-foreground">
           <Typography
-            variant="overline"
+            variant="h6"
             component="h3"
-            className="text-white mt-0"
+            className="font-bold"
+            disableGutters
           >
             {title}
           </Typography>
           <Typography
             variant="caption"
             component="p"
-            className="text-white/90"
             disableGutters
+            className="uppercase"
           >
             {description}
           </Typography>
@@ -64,14 +65,19 @@ export function GalleryImage({
 
       {/* Mobile text - always visible below image */}
       <div className="block md:hidden p-6">
-        <Typography variant="overline" component="h3" className="mt-0">
+        <Typography
+          variant="h6"
+          component="h3"
+          className="font-bold"
+          disableGutters
+        >
           {title}
         </Typography>
         <Typography
           variant="caption"
           component="p"
-          className="text-muted-foreground"
           disableGutters
+          className="uppercase"
         >
           {description}
         </Typography>
