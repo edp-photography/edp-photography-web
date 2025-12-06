@@ -11,18 +11,17 @@ import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import { HeroImage } from "./components/hero-image";
+import { HeroGalleryImage } from "./components/hero-gallery-image";
 
-type Photo = {
-  title?: string;
-  description?: string;
-  blurDataURL?: string;
-  src: string;
+export type GalleryImage = {
+  title: string;
+  description: string;
   alt?: string;
+  url: string;
 };
 
 type HeroGalleryProps = Omit<React.ComponentProps<"section">, "children"> & {
-  photos: Photo[];
+  images: GalleryImage[];
 };
 
 const plugins = [
@@ -33,7 +32,7 @@ const plugins = [
   }),
 ];
 
-export function HeroGallery({ photos, className, ...props }: HeroGalleryProps) {
+export function HeroGallery({ images, className, ...props }: HeroGalleryProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -61,13 +60,13 @@ export function HeroGallery({ photos, className, ...props }: HeroGalleryProps) {
         setApi={setApi}
       >
         <CarouselContent className="ml-0">
-          {photos.map((photo, index) => (
+          {images.map((image, index) => (
             <CarouselItem key={index} className="h-screen basis-full pl-0">
-              <HeroImage
-                src={photo.src}
-                alt={photo.alt || ""}
-                title={photo.title}
-                description={photo.description}
+              <HeroGalleryImage
+                src={image.url}
+                alt={image.alt ?? ""}
+                title={image.title}
+                description={image.description}
                 priority={index === 0}
               />
             </CarouselItem>
@@ -85,7 +84,7 @@ export function HeroGallery({ photos, className, ...props }: HeroGalleryProps) {
             aria-hidden
           />
           <div className="flex gap-3">
-            {photos.map((_, index) => (
+            {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => api?.scrollTo(index)}
