@@ -23,7 +23,6 @@ export function HeroGalleryImage({
       <Image
         fill
         src={src}
-        placeholder="blur"
         className="object-cover"
         alt={alt}
         priority={priority}

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "strapi:types": "npx openapi-typescript http://localhost:1337/swagger-spec.json -o lib/strapi/types.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

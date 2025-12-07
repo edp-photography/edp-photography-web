@@ -1,10 +1,12 @@
 import { Link } from "@/components/link";
-import { contact } from "@/lib/contact";
+import { getGlobal } from "@/data/global";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
 import { ContactForm } from "./components/contact-form";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { data: globalData } = await getGlobal();
+
   return (
     <section className="container-fluid mx-auto my-8">
       <h2 className={cn(typography({ variant: "h2" }), "mb-8")}>
@@ -25,10 +27,10 @@ export default function ContactPage() {
               <p className={cn(typography({ variant: "body1" }))}>
                 <Link
                   external
-                  href={contact.address.href}
+                  href={globalData.googleMapsUrl}
                   className="hover:underline"
                 >
-                  {contact.address.label}
+                  {globalData.address}
                 </Link>
               </p>
             </div>
@@ -40,10 +42,10 @@ export default function ContactPage() {
               <p className={cn(typography({ variant: "body1" }))}>
                 <Link
                   external
-                  href={`mailto:${contact.email}`}
+                  href={`mailto:${globalData.email}`}
                   className="hover:underline"
                 >
-                  {contact.email}
+                  {globalData.email}
                 </Link>
               </p>
             </div>
@@ -55,10 +57,10 @@ export default function ContactPage() {
               <p className={cn(typography({ variant: "body1" }))}>
                 <Link
                   external
-                  href={`tel:${contact.phone}`}
+                  href={`tel:${globalData.phone}`}
                   className="hover:underline"
                 >
-                  +420 777 07 34 41
+                  {globalData.phone}
                 </Link>
               </p>
             </div>

@@ -4,6 +4,22 @@
  */
 
 export interface paths {
+    "/global": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["global/get/global"];
+        put: operations["global/put/global"];
+        post?: never;
+        delete: operations["global/delete/global"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/home-page": {
         parameters: {
             query?: never;
@@ -455,66 +471,7 @@ export interface paths {
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        BlocksHeroGalleryEntry: {
-            /** @description A component field */
-            images?: components["schemas"]["ElementsGalleryImageEntry"][];
-        };
-        ElementsGalleryImageEntry: {
-            /** @description A string field */
-            title: string;
-            /** @description A text field */
-            description: string;
-            /** @description A media field */
-            image: components["schemas"]["PluginUploadFileDocument"];
-        };
-        PluginUploadFileDocument: {
-            /**
-             * Format: uuid
-             * @description The document ID, represented by a UUID
-             */
-            documentId: string;
-            id: number;
-            /** @description A string field */
-            name: string;
-            /** @description A string field */
-            alternativeText?: string;
-            /** @description A string field */
-            caption?: string;
-            /** @description An integer field */
-            width?: number;
-            /** @description An integer field */
-            height?: number;
-            /** @description A JSON field */
-            formats?: unknown;
-            /** @description A string field */
-            hash: string;
-            /** @description A string field */
-            ext?: string;
-            /** @description A string field */
-            mime: string;
-            /** @description A decimal field */
-            size: number;
-            /** @description A string field */
-            url: string;
-            /** @description A string field */
-            previewUrl?: string;
-            /** @description A string field */
-            provider: string;
-            /** @description A JSON field */
-            provider_metadata?: unknown;
-            /** @description A datetime field */
-            createdAt?: string;
-            /** @description A datetime field */
-            updatedAt?: string;
-            /**
-             * @description A datetime field
-             * @default 2025-12-05T21:40:11.188Z
-             */
-            publishedAt: string;
-            related: unknown;
-        };
-    };
+    schemas: never;
     responses: never;
     parameters: never;
     requestBodies: never;
@@ -523,6 +480,435 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
+    "global/get/global": {
+        parameters: {
+            query?: {
+                fields?: ("email" | "phone" | "address" | "googleMapsUrl" | "createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "seo" | "seo"[];
+                filters?: {
+                    [key: string]: unknown;
+                };
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            /** Format: email */
+                            email: string;
+                            phone: string;
+                            address: string;
+                            googleMapsUrl: string;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-07T13:40:05.598Z */
+                            publishedAt: string;
+                            seo: {
+                                metaTitle: string;
+                                metaDescription: string;
+                                keywords?: string;
+                                metaRobots?: string;
+                                metaViewport?: string;
+                                canonicalURL?: string;
+                                structuredData?: unknown;
+                                metaImage?: {
+                                    /** Format: uuid */
+                                    documentId: string;
+                                    id: number;
+                                    name: string;
+                                    alternativeText?: string;
+                                    caption?: string;
+                                    width?: number;
+                                    height?: number;
+                                    formats?: unknown;
+                                    hash: string;
+                                    ext?: string;
+                                    mime: string;
+                                    size: number;
+                                    url: string;
+                                    previewUrl?: string;
+                                    provider: string;
+                                    provider_metadata?: unknown;
+                                    createdAt?: string;
+                                    updatedAt?: string;
+                                    /** @default 2025-12-07T13:40:05.608Z */
+                                    publishedAt: string;
+                                    related: unknown;
+                                };
+                                openGraph?: {
+                                    ogTitle: string;
+                                    ogDescription: string;
+                                    ogUrl?: string;
+                                    ogType?: string;
+                                    ogImage?: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2025-12-07T13:40:05.608Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "global/put/global": {
+        parameters: {
+            query?: {
+                fields?: ("email" | "phone" | "address" | "googleMapsUrl" | "createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "seo" | "seo"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": {
+                    data: {
+                        /** Format: email */
+                        email?: string;
+                        phone?: string;
+                        address?: string;
+                        googleMapsUrl?: string;
+                        /** @default 2025-12-07T13:40:05.615Z */
+                        publishedAt?: string;
+                        seo?: unknown;
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            /** Format: email */
+                            email: string;
+                            phone: string;
+                            address: string;
+                            googleMapsUrl: string;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-07T13:40:05.616Z */
+                            publishedAt: string;
+                            seo: {
+                                metaTitle: string;
+                                metaDescription: string;
+                                keywords?: string;
+                                metaRobots?: string;
+                                metaViewport?: string;
+                                canonicalURL?: string;
+                                structuredData?: unknown;
+                                metaImage?: {
+                                    /** Format: uuid */
+                                    documentId: string;
+                                    id: number;
+                                    name: string;
+                                    alternativeText?: string;
+                                    caption?: string;
+                                    width?: number;
+                                    height?: number;
+                                    formats?: unknown;
+                                    hash: string;
+                                    ext?: string;
+                                    mime: string;
+                                    size: number;
+                                    url: string;
+                                    previewUrl?: string;
+                                    provider: string;
+                                    provider_metadata?: unknown;
+                                    createdAt?: string;
+                                    updatedAt?: string;
+                                    /** @default 2025-12-07T13:40:05.608Z */
+                                    publishedAt: string;
+                                    related: unknown;
+                                };
+                                openGraph?: {
+                                    ogTitle: string;
+                                    ogDescription: string;
+                                    ogUrl?: string;
+                                    ogType?: string;
+                                    ogImage?: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2025-12-07T13:40:05.608Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "global/delete/global": {
+        parameters: {
+            query?: {
+                fields?: ("email" | "phone" | "address" | "googleMapsUrl" | "createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "seo" | "seo"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            /** Format: email */
+                            email: string;
+                            phone: string;
+                            address: string;
+                            googleMapsUrl: string;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-07T13:40:05.619Z */
+                            publishedAt: string;
+                            seo: {
+                                metaTitle: string;
+                                metaDescription: string;
+                                keywords?: string;
+                                metaRobots?: string;
+                                metaViewport?: string;
+                                canonicalURL?: string;
+                                structuredData?: unknown;
+                                metaImage?: {
+                                    /** Format: uuid */
+                                    documentId: string;
+                                    id: number;
+                                    name: string;
+                                    alternativeText?: string;
+                                    caption?: string;
+                                    width?: number;
+                                    height?: number;
+                                    formats?: unknown;
+                                    hash: string;
+                                    ext?: string;
+                                    mime: string;
+                                    size: number;
+                                    url: string;
+                                    previewUrl?: string;
+                                    provider: string;
+                                    provider_metadata?: unknown;
+                                    createdAt?: string;
+                                    updatedAt?: string;
+                                    /** @default 2025-12-07T13:40:05.608Z */
+                                    publishedAt: string;
+                                    related: unknown;
+                                };
+                                openGraph?: {
+                                    ogTitle: string;
+                                    ogDescription: string;
+                                    ogUrl?: string;
+                                    ogType?: string;
+                                    ogImage?: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2025-12-07T13:40:05.608Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
     "home-page/get/home_page": {
         parameters: {
             query?: {
@@ -547,23 +933,43 @@ export interface operations {
                 content: {
                     "application/json": {
                         data: {
-                            /**
-                             * Format: uuid
-                             * @description The document ID, represented by a UUID
-                             */
+                            /** Format: uuid */
                             documentId: string;
                             id: number;
-                            /** @description A datetime field */
                             createdAt?: string;
-                            /** @description A datetime field */
                             updatedAt?: string;
-                            /**
-                             * @description A datetime field
-                             * @default 2025-12-05T21:40:11.178Z
-                             */
+                            /** @default 2025-12-07T13:40:05.623Z */
                             publishedAt: string;
-                            /** @description A component field */
-                            heroGallery: components["schemas"]["BlocksHeroGalleryEntry"];
+                            heroGallery: {
+                                images?: {
+                                    title: string;
+                                    description: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2025-12-07T13:40:05.608Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -620,12 +1026,8 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /**
-                         * @description A datetime field
-                         * @default 2025-12-05T21:40:11.192Z
-                         */
+                        /** @default 2025-12-07T13:40:05.626Z */
                         publishedAt?: string;
-                        /** @description A component field */
                         heroGallery?: unknown;
                     };
                 };
@@ -640,23 +1042,43 @@ export interface operations {
                 content: {
                     "application/json": {
                         data: {
-                            /**
-                             * Format: uuid
-                             * @description The document ID, represented by a UUID
-                             */
+                            /** Format: uuid */
                             documentId: string;
                             id: number;
-                            /** @description A datetime field */
                             createdAt?: string;
-                            /** @description A datetime field */
                             updatedAt?: string;
-                            /**
-                             * @description A datetime field
-                             * @default 2025-12-05T21:40:11.194Z
-                             */
+                            /** @default 2025-12-07T13:40:05.627Z */
                             publishedAt: string;
-                            /** @description A component field */
-                            heroGallery: components["schemas"]["BlocksHeroGalleryEntry"];
+                            heroGallery: {
+                                images?: {
+                                    title: string;
+                                    description: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2025-12-07T13:40:05.608Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -719,23 +1141,43 @@ export interface operations {
                 content: {
                     "application/json": {
                         data: {
-                            /**
-                             * Format: uuid
-                             * @description The document ID, represented by a UUID
-                             */
+                            /** Format: uuid */
                             documentId: string;
                             id: number;
-                            /** @description A datetime field */
                             createdAt?: string;
-                            /** @description A datetime field */
                             updatedAt?: string;
-                            /**
-                             * @description A datetime field
-                             * @default 2025-12-05T21:40:11.197Z
-                             */
+                            /** @default 2025-12-07T13:40:05.629Z */
                             publishedAt: string;
-                            /** @description A component field */
-                            heroGallery: components["schemas"]["BlocksHeroGalleryEntry"];
+                            heroGallery: {
+                                images?: {
+                                    title: string;
+                                    description: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2025-12-07T13:40:05.608Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -1549,17 +1991,12 @@ export interface operations {
                     [key: string]: "asc" | "desc";
                 }[];
                 pagination?: {
-                    /** @description Include total count in response */
                     withCount?: boolean;
                 } & ({
-                    /** @description Page number (1-based) */
                     page: number;
-                    /** @description Number of entries per page */
                     pageSize: number;
                 } | {
-                    /** @description Number of entries to skip */
                     start: number;
-                    /** @description Maximum number of entries to return */
                     limit: number;
                 });
                 filters?: {
@@ -2716,17 +3153,12 @@ export interface operations {
                     [key: string]: "asc" | "desc";
                 }[];
                 pagination?: {
-                    /** @description Include total count in response */
                     withCount?: boolean;
                 } & ({
-                    /** @description Page number (1-based) */
                     page: number;
-                    /** @description Number of entries per page */
                     pageSize: number;
                 } | {
-                    /** @description Number of entries to skip */
                     start: number;
-                    /** @description Maximum number of entries to return */
                     limit: number;
                 });
                 filters?: {
