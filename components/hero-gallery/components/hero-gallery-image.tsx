@@ -23,7 +23,7 @@ export function HeroGalleryImage({
       <Image
         fill
         src={src}
-        className="object-cover"
+        className="object-cover object-top"
         alt={alt}
         priority={priority}
         quality={85}
