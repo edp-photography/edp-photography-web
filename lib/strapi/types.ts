@@ -36,6 +36,38 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/services-page": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["services-page/get/services_page"];
+        put: operations["services-page/put/services_page"];
+        post?: never;
+        delete: operations["services-page/delete/services_page"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/videoclips-page": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["videoclips-page/get/videoclips_page"];
+        put: operations["videoclips-page/put/videoclips_page"];
+        post?: never;
+        delete: operations["videoclips-page/delete/videoclips_page"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/content-types": {
         parameters: {
             query?: never;
@@ -516,7 +548,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-09T17:31:45.275Z */
+                            /** @default 2025-12-12T11:00:51.434Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -546,7 +578,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-09T17:31:45.282Z */
+                                    /** @default 2025-12-12T11:00:51.441Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -575,7 +607,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -644,7 +676,7 @@ export interface operations {
                         googleMapsUrl?: string;
                         instagram?: string;
                         facebook?: string;
-                        /** @default 2025-12-09T17:31:45.287Z */
+                        /** @default 2025-12-12T11:00:51.447Z */
                         publishedAt?: string;
                         seo?: unknown;
                     };
@@ -672,7 +704,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-09T17:31:45.289Z */
+                            /** @default 2025-12-12T11:00:51.448Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -702,7 +734,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-09T17:31:45.282Z */
+                                    /** @default 2025-12-12T11:00:51.441Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -731,7 +763,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -811,7 +843,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-09T17:31:45.291Z */
+                            /** @default 2025-12-12T11:00:51.451Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -841,7 +873,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-09T17:31:45.282Z */
+                                    /** @default 2025-12-12T11:00:51.441Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -870,7 +902,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -946,7 +978,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-09T17:31:45.294Z */
+                            /** @default 2025-12-12T11:00:51.454Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -972,7 +1004,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1002,7 +1034,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1064,7 +1096,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-09T17:31:45.297Z */
+                        /** @default 2025-12-12T11:00:51.459Z */
                         publishedAt?: string;
                         heroGallery?: unknown;
                         imageGallery?: unknown;
@@ -1086,7 +1118,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-09T17:31:45.298Z */
+                            /** @default 2025-12-12T11:00:51.460Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1112,7 +1144,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1142,7 +1174,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1215,7 +1247,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-09T17:31:45.299Z */
+                            /** @default 2025-12-12T11:00:51.462Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1241,7 +1273,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1271,10 +1303,531 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-09T17:31:45.282Z */
+                                        /** @default 2025-12-12T11:00:51.441Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "services-page/get/services_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "serviceCategories" | "serviceCategories"[];
+                filters?: {
+                    [key: string]: unknown;
+                };
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-12T11:00:51.464Z */
+                            publishedAt: string;
+                            serviceCategories?: {
+                                title: string;
+                                description?: string;
+                                services?: {
+                                    title: string;
+                                    subtitle?: string;
+                                    description?: string;
+                                    price?: string;
+                                    duration?: string;
+                                    location?: string;
+                                    included?: string;
+                                    notIncluded?: string;
+                                    addOns?: string;
+                                    notes?: string;
+                                    promo?: {
+                                        title: string;
+                                        description?: string;
+                                    };
+                                }[];
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "services-page/put/services_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "serviceCategories" | "serviceCategories"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": {
+                    data: {
+                        /** @default 2025-12-12T11:00:51.467Z */
+                        publishedAt?: string;
+                        serviceCategories?: unknown[];
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-12T11:00:51.468Z */
+                            publishedAt: string;
+                            serviceCategories?: {
+                                title: string;
+                                description?: string;
+                                services?: {
+                                    title: string;
+                                    subtitle?: string;
+                                    description?: string;
+                                    price?: string;
+                                    duration?: string;
+                                    location?: string;
+                                    included?: string;
+                                    notIncluded?: string;
+                                    addOns?: string;
+                                    notes?: string;
+                                    promo?: {
+                                        title: string;
+                                        description?: string;
+                                    };
+                                }[];
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "services-page/delete/services_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "serviceCategories" | "serviceCategories"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-12T11:00:51.469Z */
+                            publishedAt: string;
+                            serviceCategories?: {
+                                title: string;
+                                description?: string;
+                                services?: {
+                                    title: string;
+                                    subtitle?: string;
+                                    description?: string;
+                                    price?: string;
+                                    duration?: string;
+                                    location?: string;
+                                    included?: string;
+                                    notIncluded?: string;
+                                    addOns?: string;
+                                    notes?: string;
+                                    promo?: {
+                                        title: string;
+                                        description?: string;
+                                    };
+                                }[];
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "videoclips-page/get/videoclips_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "youtubeGallery" | "youtubeGallery"[];
+                filters?: {
+                    [key: string]: unknown;
+                };
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-12T11:00:51.472Z */
+                            publishedAt: string;
+                            youtubeGallery?: {
+                                videos?: {
+                                    title?: string;
+                                    description?: string;
+                                    url: string;
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "videoclips-page/put/videoclips_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "youtubeGallery" | "youtubeGallery"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": {
+                    data: {
+                        /** @default 2025-12-12T11:00:51.474Z */
+                        publishedAt?: string;
+                        youtubeGallery?: unknown;
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-12T11:00:51.474Z */
+                            publishedAt: string;
+                            youtubeGallery?: {
+                                videos?: {
+                                    title?: string;
+                                    description?: string;
+                                    url: string;
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "videoclips-page/delete/videoclips_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "youtubeGallery" | "youtubeGallery"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2025-12-12T11:00:51.476Z */
+                            publishedAt: string;
+                            youtubeGallery?: {
+                                videos?: {
+                                    title?: string;
+                                    description?: string;
+                                    url: string;
                                 }[];
                             };
                         };
