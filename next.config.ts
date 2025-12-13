@@ -12,6 +12,21 @@ const nextConfig: NextConfig = {
     ],
     formats: ["image/avif", "image/webp"],
   },
+  async headers() {
+    const strapiOrigin = new URL(env.NEXT_PUBLIC_STRAPI_API_URL).origin;
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Frame-Options", value: "ALLOWALL" },
+          {
+            key: "Content-Security-Policy",
+            value: `frame-ancestors 'self' ${strapiOrigin}`,
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
