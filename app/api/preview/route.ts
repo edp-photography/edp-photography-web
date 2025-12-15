@@ -1,4 +1,3 @@
-// app/api/preview/route.ts
 import { env } from "@/config/env";
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
@@ -19,15 +18,18 @@ export async function GET(request: Request) {
     return new Response("Missing url parameter", { status: 400 });
   }
 
+  // Prevent open redirects
+  if (!url.startsWith("/") || url.includes("://")) {
+    return new Response("Invalid redirect", { status: 400 });
+  }
+
   const draft = await draftMode();
 
-  // Enable or disable draft mode based on content status
   if (status === "published") {
     draft.disable();
   } else {
     draft.enable();
   }
 
-  // Redirect to the page
   redirect(url);
 }

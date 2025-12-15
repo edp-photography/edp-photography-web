@@ -63,23 +63,22 @@ export async function fetchAPI<
   path: Path,
   options: FetchAPIOptions<Body, QueryParamsFor<Path, Method>> = {}
 ): Promise<ResponseFor<Path, Method>> {
+  const { method = "GET", authToken, body, query = {}, next } = options;
   const { isEnabled: isDraftMode } = await draftMode();
-  const { method = "GET", authToken, body, query, next } = options;
 
   const url = new URL(`api${path}`, env.NEXT_PUBLIC_STRAPI_API_URL);
 
-  // Append query params
-  if (query || isDraftMode) {
-    const mergedQuery = {
-      ...(query || {}),
-      ...(isDraftMode && { publicationState: "preview" }),
-    };
+  const finalQuery = {
+    ...(query || {}),
+    ...(isDraftMode && { status: "draft" }),
+  };
 
-    const queryString = qs.stringify(mergedQuery, {
+  // Append query params
+  if (finalQuery) {
+    const queryString = qs.stringify(finalQuery, {
       encodeValuesOnly: true,
       arrayFormat: "indices",
     });
-
     if (queryString) {
       url.search = queryString;
     }
@@ -96,7 +95,7 @@ export async function fetchAPI<
     ...(body && {
       body: isFormData ? body : JSON.stringify(body),
     }),
-    ...(isDraftMode ? { cache: "no-store" as const } : next && { next }),
+    ...(next && { next }),
   };
 
   const res = await fetch(url.toString(), fetchOptions);
