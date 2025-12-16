@@ -1,26 +1,19 @@
-import { Typography } from "@/components/typohraphy";
+import { YoutubeGallery } from "@/components/youtube-gallery";
+import { getVideoclipsPage } from "@/data/videoclips";
+import { cn } from "@/lib/utils";
+import { typography } from "@/lib/variants/typography";
 
-export default function VideoclipsPage() {
+export default async function VideoclipsPage() {
+  const videoclips = await getVideoclipsPage();
+
+  const youtubeGalleryItems = videoclips.data?.youtubeGallery?.youtubeEmbeds;
+
   return (
     <section className="container-fluid mx-auto my-8">
-      <Typography variant="h2" className="mb-8 text-center">
+      <h2 className={cn(typography({ variant: "h2" }), "mb-8 text-center")}>
         VIDEOCLIPS
-      </Typography>
-
-      <div className="flex justify-center">
-        <div className="w-full max-w-4xl">
-          <div className="relative aspect-video">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/Co3iu8zK0yY?si=TVBwRQv6vLs-5FV1"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      </div>
+      </h2>
+      {youtubeGalleryItems && <YoutubeGallery items={youtubeGalleryItems} />}
     </section>
   );
 }

@@ -548,7 +548,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.434Z */
+                            /** @default 2025-12-16T14:03:57.499Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -578,7 +578,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-12T11:00:51.441Z */
+                                    /** @default 2025-12-16T14:03:57.506Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -607,7 +607,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -676,7 +676,7 @@ export interface operations {
                         googleMapsUrl?: string;
                         instagram?: string;
                         facebook?: string;
-                        /** @default 2025-12-12T11:00:51.447Z */
+                        /** @default 2025-12-16T14:03:57.511Z */
                         publishedAt?: string;
                         seo?: unknown;
                     };
@@ -704,7 +704,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.448Z */
+                            /** @default 2025-12-16T14:03:57.513Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -734,7 +734,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-12T11:00:51.441Z */
+                                    /** @default 2025-12-16T14:03:57.506Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -763,7 +763,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -843,7 +843,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.451Z */
+                            /** @default 2025-12-16T14:03:57.516Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -873,7 +873,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-12T11:00:51.441Z */
+                                    /** @default 2025-12-16T14:03:57.506Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -902,7 +902,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -978,7 +978,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.454Z */
+                            /** @default 2025-12-16T14:03:57.519Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1004,7 +1004,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1034,7 +1034,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1096,7 +1096,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-12T11:00:51.459Z */
+                        /** @default 2025-12-16T14:03:57.525Z */
                         publishedAt?: string;
                         heroGallery?: unknown;
                         imageGallery?: unknown;
@@ -1118,7 +1118,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.460Z */
+                            /** @default 2025-12-16T14:03:57.526Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1144,7 +1144,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1174,7 +1174,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1247,7 +1247,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.462Z */
+                            /** @default 2025-12-16T14:03:57.527Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1273,7 +1273,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1303,7 +1303,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-12T11:00:51.441Z */
+                                        /** @default 2025-12-16T14:03:57.506Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1379,7 +1379,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.464Z */
+                            /** @default 2025-12-16T14:03:57.530Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -1457,7 +1457,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-12T11:00:51.467Z */
+                        /** @default 2025-12-16T14:03:57.534Z */
                         publishedAt?: string;
                         serviceCategories?: unknown[];
                     };
@@ -1478,7 +1478,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.468Z */
+                            /** @default 2025-12-16T14:03:57.534Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -1567,7 +1567,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.469Z */
+                            /** @default 2025-12-16T14:03:57.536Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -1659,11 +1659,11 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.472Z */
+                            /** @default 2025-12-16T14:03:57.538Z */
                             publishedAt: string;
                             youtubeGallery?: {
-                                videos?: {
-                                    title?: string;
+                                youtubeEmbeds?: {
+                                    title: string;
                                     description?: string;
                                     url: string;
                                 }[];
@@ -1724,7 +1724,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-12T11:00:51.474Z */
+                        /** @default 2025-12-16T14:03:57.541Z */
                         publishedAt?: string;
                         youtubeGallery?: unknown;
                     };
@@ -1745,11 +1745,11 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.474Z */
+                            /** @default 2025-12-16T14:03:57.541Z */
                             publishedAt: string;
                             youtubeGallery?: {
-                                videos?: {
-                                    title?: string;
+                                youtubeEmbeds?: {
+                                    title: string;
                                     description?: string;
                                     url: string;
                                 }[];
@@ -1821,11 +1821,11 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-12T11:00:51.476Z */
+                            /** @default 2025-12-16T14:03:57.543Z */
                             publishedAt: string;
                             youtubeGallery?: {
-                                videos?: {
-                                    title?: string;
+                                youtubeEmbeds?: {
+                                    title: string;
                                     description?: string;
                                     url: string;
                                 }[];
