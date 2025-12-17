@@ -14,5 +14,4 @@ export const mainNav: readonly NavItem[] = [
   { label: "Calendars", href: routes.calendars },
   { label: "Videoclips", href: routes.videoclips },
   { label: "Services", href: routes.services },
-  { label: "Prices", href: routes.prices },
 ];
