@@ -1,10 +1,14 @@
 export const routes = {
   home: "/",
   about: "/about",
-  weddings: "/weddings",
-  videoclips: "/videoclips",
-  workshops: "/workshops",
-  contact: "/contact",
   calendars: "/calendars",
+  contact: "/contact",
+  fashion: "/fashion",
+  portraits: "/portraits",
+  fineArt: "/fine-art",
   services: "/services",
+  travel: "/travel",
+  weddings: "/weddings",
+  workshops: "/workshops",
+  videoclips: "/videoclips",
 } as const;
