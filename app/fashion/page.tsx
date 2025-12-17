@@ -2,7 +2,7 @@ import { PhotoGallery } from "@/components/photo-gallery";
 import { getFashionPage } from "@/data/fashion";
 import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
 
-export async function FashionPage() {
+export default async function FashionPage() {
   const fashionPage = await getFashionPage();
 
   const photoGalleryImages = fashionPage.data.imageGallery?.images?.map(
