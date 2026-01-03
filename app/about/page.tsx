@@ -1,7 +1,13 @@
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { Typography } from "@/components/typohraphy";
+import { getAboutPage } from "@/data/about";
 import Image from "next/image";
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const aboutPage = await getAboutPage();
+
+  const markdown = aboutPage?.data?.content;
+
   return (
     <section className="container-fluid mx-auto my-8">
       <div className="flex flex-col md:flex-row gap-12 md:gap-16 mb-16">
@@ -13,40 +19,7 @@ export default function AboutPage() {
 
           {/* Content Sections */}
           <div>
-            <Typography variant="h3">THE EARLY DAYS</Typography>
-            <Typography variant="body2">
-              Emanuel Della Pia is an internationally acclaimed photographer and
-              visual artist, working between Prague and Rome. His work spans
-              magazines, commercials, interiors, calendars, and portraits of
-              notable figures, blending glamour, fashion, and fine art.
-            </Typography>
-            <Typography variant="body2">
-              With decades of experience, Emanuel captures compelling stories
-              through his lens, collaborating with top models, musicians, and
-              cultural icons. His portfolio reflects a passion for creativity
-              and visual storytelling.
-            </Typography>
-
-            <Typography variant="h3">CAREER-DEFINING EDITORIAL WORK</Typography>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Typography>
-
-            <Typography variant="h3">EXHIBITIONS</Typography>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
-
-            <Typography variant="h3">AWARDS</Typography>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
-
-            <Typography variant="h3">PRESS</Typography>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
+            <MarkdownRenderer markdown={markdown} />;
           </div>
         </div>
 

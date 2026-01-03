@@ -4,6 +4,22 @@
  */
 
 export interface paths {
+    "/about-page": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["about-page/get/about_page"];
+        put: operations["about-page/put/about_page"];
+        post?: never;
+        delete: operations["about-page/delete/about_page"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/fashion-page": {
         parameters: {
             query?: never;
@@ -560,6 +576,237 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
+    "about-page/get/about_page": {
+        parameters: {
+            query?: {
+                fields?: ("title" | "quote" | "content" | "createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | never | never[];
+                filters?: {
+                    [key: string]: unknown;
+                };
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            title?: string;
+                            quote?: string;
+                            content?: string;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-03T10:16:23.651Z */
+                            publishedAt: string;
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "about-page/put/about_page": {
+        parameters: {
+            query?: {
+                fields?: ("title" | "quote" | "content" | "createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | never | never[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": {
+                    data: {
+                        title?: string;
+                        quote?: string;
+                        content?: string;
+                        /** @default 2026-01-03T10:16:23.654Z */
+                        publishedAt?: string;
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            title?: string;
+                            quote?: string;
+                            content?: string;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-03T10:16:23.656Z */
+                            publishedAt: string;
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "about-page/delete/about_page": {
+        parameters: {
+            query?: {
+                fields?: ("title" | "quote" | "content" | "createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | never | never[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: number;
+                            title?: string;
+                            quote?: string;
+                            content?: string;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-03T10:16:23.658Z */
+                            publishedAt: string;
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
     "fashion-page/get/fashion_page": {
         parameters: {
             query?: {
@@ -589,7 +836,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.081Z */
+                            /** @default 2026-01-03T10:16:23.661Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -615,7 +862,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -677,7 +924,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-22T10:10:19.096Z */
+                        /** @default 2026-01-03T10:16:23.671Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -698,7 +945,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.097Z */
+                            /** @default 2026-01-03T10:16:23.672Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -724,7 +971,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -797,7 +1044,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.099Z */
+                            /** @default 2026-01-03T10:16:23.676Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -823,7 +1070,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -899,7 +1146,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.103Z */
+                            /** @default 2026-01-03T10:16:23.679Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -925,7 +1172,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -987,7 +1234,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-22T10:10:19.105Z */
+                        /** @default 2026-01-03T10:16:23.681Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -1008,7 +1255,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.106Z */
+                            /** @default 2026-01-03T10:16:23.682Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1034,7 +1281,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1107,7 +1354,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.108Z */
+                            /** @default 2026-01-03T10:16:23.683Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1133,7 +1380,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1216,7 +1463,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.113Z */
+                            /** @default 2026-01-03T10:16:23.687Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1246,7 +1493,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-22T10:10:19.091Z */
+                                    /** @default 2026-01-03T10:16:23.668Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1275,7 +1522,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1344,7 +1591,7 @@ export interface operations {
                         googleMapsUrl?: string;
                         instagram?: string;
                         facebook?: string;
-                        /** @default 2025-12-22T10:10:19.119Z */
+                        /** @default 2026-01-03T10:16:23.692Z */
                         publishedAt?: string;
                         seo?: unknown;
                     };
@@ -1372,7 +1619,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.120Z */
+                            /** @default 2026-01-03T10:16:23.693Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1402,7 +1649,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-22T10:10:19.091Z */
+                                    /** @default 2026-01-03T10:16:23.668Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1431,7 +1678,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1511,7 +1758,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.125Z */
+                            /** @default 2026-01-03T10:16:23.695Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1541,7 +1788,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2025-12-22T10:10:19.091Z */
+                                    /** @default 2026-01-03T10:16:23.668Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1570,7 +1817,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1646,7 +1893,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.128Z */
+                            /** @default 2026-01-03T10:16:23.698Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1672,7 +1919,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1702,7 +1949,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1764,7 +2011,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-22T10:10:19.130Z */
+                        /** @default 2026-01-03T10:16:23.700Z */
                         publishedAt?: string;
                         heroGallery?: unknown;
                         imageGallery?: unknown;
@@ -1786,7 +2033,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.131Z */
+                            /** @default 2026-01-03T10:16:23.704Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1812,7 +2059,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1842,7 +2089,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1915,7 +2162,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.133Z */
+                            /** @default 2026-01-03T10:16:23.706Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1941,7 +2188,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1971,7 +2218,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2047,7 +2294,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.136Z */
+                            /** @default 2026-01-03T10:16:23.708Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2125,7 +2372,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-22T10:10:19.140Z */
+                        /** @default 2026-01-03T10:16:23.712Z */
                         publishedAt?: string;
                         serviceCategories?: unknown[];
                     };
@@ -2146,7 +2393,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.140Z */
+                            /** @default 2026-01-03T10:16:23.713Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2235,7 +2482,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.142Z */
+                            /** @default 2026-01-03T10:16:23.714Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2327,7 +2574,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.145Z */
+                            /** @default 2026-01-03T10:16:23.717Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2392,7 +2639,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-22T10:10:19.148Z */
+                        /** @default 2026-01-03T10:16:23.719Z */
                         publishedAt?: string;
                         youtubeGallery?: unknown;
                     };
@@ -2413,7 +2660,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.148Z */
+                            /** @default 2026-01-03T10:16:23.720Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2489,7 +2736,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.150Z */
+                            /** @default 2026-01-03T10:16:23.721Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2568,7 +2815,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.156Z */
+                            /** @default 2026-01-03T10:16:23.725Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -2594,7 +2841,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2656,7 +2903,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2025-12-22T10:10:19.158Z */
+                        /** @default 2026-01-03T10:16:23.727Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -2677,7 +2924,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.158Z */
+                            /** @default 2026-01-03T10:16:23.728Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -2703,7 +2950,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2776,7 +3023,7 @@ export interface operations {
                             id: number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2025-12-22T10:10:19.160Z */
+                            /** @default 2026-01-03T10:16:23.730Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -2802,7 +3049,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2025-12-22T10:10:19.091Z */
+                                        /** @default 2026-01-03T10:16:23.668Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
