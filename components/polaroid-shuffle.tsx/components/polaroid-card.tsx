@@ -38,7 +38,9 @@ export function PolaroidCard({
 
       {/* Caption area */}
       <div className="mt-[6%] text-center">
-        <p className="text-neutral-900 font-handwriting text-lg">{title}</p>
+        <p className="text-neutral-900 font-handwriting text-2xl font-semibold">
+          {title}
+        </p>
 
         {description && (
           <p className="text-neutral-700 text-sm mt-1">{description}</p>
