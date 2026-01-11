@@ -15,23 +15,31 @@ export function PolaroidCard({
   return (
     <div
       className={cn(
-        className,
-        "bg-white dark:bg-neutral-100 p-4 pb-16 shadow-lg"
+        "bg-white dark:bg-neutral-100 shadow-lg",
+        // Polaroid card ratio
+        "w-full aspect-88/107",
+        // Responsive padding (Polaroid-accurate)
+        "p-[6%_4.5%_18%]",
+        className
       )}
       {...props}
     >
-      <div className="relative aspect-square w-full">
+      {/* Photo area */}
+      <div className="relative w-full aspect-square overflow-hidden bg-neutral-200">
         <Image
           src={resolveStrapiMediaUrl(image.url)}
           alt={image.alternativeText ?? ""}
-          aria-hidden={image.alternativeText ? false : true}
+          aria-hidden={!image.alternativeText}
           fill
           className="object-cover object-top"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <div className="mt-4 text-center">
+
+      {/* Caption area */}
+      <div className="mt-[6%] text-center">
         <p className="text-neutral-900 font-handwriting text-lg">{title}</p>
+
         {description && (
           <p className="text-neutral-700 text-sm mt-1">{description}</p>
         )}
