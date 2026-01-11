@@ -580,7 +580,7 @@ export interface operations {
         parameters: {
             query?: {
                 fields?: ("title" | "quote" | "content" | "createdAt" | "updatedAt" | "publishedAt")[];
-                populate?: "*" | never | never[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
                 filters?: {
                     [key: string]: unknown;
                 };
@@ -602,14 +602,44 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             title?: string;
                             quote?: string;
                             content?: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.651Z */
+                            /** @default 2026-01-11T14:17:14.743Z */
                             publishedAt: string;
+                            imageGallery?: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -655,7 +685,7 @@ export interface operations {
         parameters: {
             query?: {
                 fields?: ("title" | "quote" | "content" | "createdAt" | "updatedAt" | "publishedAt")[];
-                populate?: "*" | never | never[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
                 status?: "draft" | "published";
             };
             header?: never;
@@ -669,8 +699,9 @@ export interface operations {
                         title?: string;
                         quote?: string;
                         content?: string;
-                        /** @default 2026-01-03T10:16:23.654Z */
+                        /** @default 2026-01-11T14:17:14.753Z */
                         publishedAt?: string;
+                        imageGallery?: unknown;
                     };
                 };
             };
@@ -686,14 +717,44 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             title?: string;
                             quote?: string;
                             content?: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.656Z */
+                            /** @default 2026-01-11T14:17:14.754Z */
                             publishedAt: string;
+                            imageGallery?: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -739,7 +800,7 @@ export interface operations {
         parameters: {
             query?: {
                 fields?: ("title" | "quote" | "content" | "createdAt" | "updatedAt" | "publishedAt")[];
-                populate?: "*" | never | never[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
                 status?: "draft" | "published";
             };
             header?: never;
@@ -758,14 +819,44 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             title?: string;
                             quote?: string;
                             content?: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.658Z */
+                            /** @default 2026-01-11T14:17:14.757Z */
                             publishedAt: string;
+                            imageGallery?: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -833,10 +924,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.661Z */
+                            /** @default 2026-01-11T14:17:14.760Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -845,7 +936,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -862,7 +953,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -924,7 +1015,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-03T10:16:23.671Z */
+                        /** @default 2026-01-11T14:17:14.762Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -942,10 +1033,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.672Z */
+                            /** @default 2026-01-11T14:17:14.763Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -954,7 +1045,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -971,7 +1062,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1041,10 +1132,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.676Z */
+                            /** @default 2026-01-11T14:17:14.767Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1053,7 +1144,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1070,7 +1161,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1143,10 +1234,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.679Z */
+                            /** @default 2026-01-11T14:17:14.769Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1155,7 +1246,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1172,7 +1263,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1234,7 +1325,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-03T10:16:23.681Z */
+                        /** @default 2026-01-11T14:17:14.771Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -1252,10 +1343,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.682Z */
+                            /** @default 2026-01-11T14:17:14.772Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1264,7 +1355,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1281,7 +1372,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1351,10 +1442,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.683Z */
+                            /** @default 2026-01-11T14:17:14.773Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1363,7 +1454,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1380,7 +1471,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1453,7 +1544,7 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             /** Format: email */
                             email: string;
                             phone: string;
@@ -1463,7 +1554,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.687Z */
+                            /** @default 2026-01-11T14:17:14.777Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1476,7 +1567,7 @@ export interface operations {
                                 metaImage?: {
                                     /** Format: uuid */
                                     documentId: string;
-                                    id: number;
+                                    id: string | number;
                                     name: string;
                                     alternativeText?: string;
                                     caption?: string;
@@ -1493,7 +1584,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2026-01-03T10:16:23.668Z */
+                                    /** @default 2026-01-11T14:17:14.749Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1505,7 +1596,7 @@ export interface operations {
                                     ogImage?: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1522,7 +1613,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1591,7 +1682,7 @@ export interface operations {
                         googleMapsUrl?: string;
                         instagram?: string;
                         facebook?: string;
-                        /** @default 2026-01-03T10:16:23.692Z */
+                        /** @default 2026-01-11T14:17:14.781Z */
                         publishedAt?: string;
                         seo?: unknown;
                     };
@@ -1609,7 +1700,7 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             /** Format: email */
                             email: string;
                             phone: string;
@@ -1619,7 +1710,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.693Z */
+                            /** @default 2026-01-11T14:17:14.783Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1632,7 +1723,7 @@ export interface operations {
                                 metaImage?: {
                                     /** Format: uuid */
                                     documentId: string;
-                                    id: number;
+                                    id: string | number;
                                     name: string;
                                     alternativeText?: string;
                                     caption?: string;
@@ -1649,7 +1740,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2026-01-03T10:16:23.668Z */
+                                    /** @default 2026-01-11T14:17:14.749Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1661,7 +1752,7 @@ export interface operations {
                                     ogImage?: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1678,7 +1769,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1748,7 +1839,7 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             /** Format: email */
                             email: string;
                             phone: string;
@@ -1758,7 +1849,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.695Z */
+                            /** @default 2026-01-11T14:17:14.785Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1771,7 +1862,7 @@ export interface operations {
                                 metaImage?: {
                                     /** Format: uuid */
                                     documentId: string;
-                                    id: number;
+                                    id: string | number;
                                     name: string;
                                     alternativeText?: string;
                                     caption?: string;
@@ -1788,7 +1879,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2026-01-03T10:16:23.668Z */
+                                    /** @default 2026-01-11T14:17:14.749Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1800,7 +1891,7 @@ export interface operations {
                                     ogImage?: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1817,7 +1908,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1890,10 +1981,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.698Z */
+                            /** @default 2026-01-11T14:17:14.787Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -1902,7 +1993,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1919,7 +2010,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1932,7 +2023,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -1949,7 +2040,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2011,7 +2102,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-03T10:16:23.700Z */
+                        /** @default 2026-01-11T14:17:14.792Z */
                         publishedAt?: string;
                         heroGallery?: unknown;
                         imageGallery?: unknown;
@@ -2030,10 +2121,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.704Z */
+                            /** @default 2026-01-11T14:17:14.793Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -2042,7 +2133,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -2059,7 +2150,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2072,7 +2163,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -2089,7 +2180,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2159,10 +2250,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.706Z */
+                            /** @default 2026-01-11T14:17:14.795Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -2171,7 +2262,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -2188,7 +2279,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2201,7 +2292,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -2218,7 +2309,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2291,10 +2382,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.708Z */
+                            /** @default 2026-01-11T14:17:14.797Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2372,7 +2463,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-03T10:16:23.712Z */
+                        /** @default 2026-01-11T14:17:14.801Z */
                         publishedAt?: string;
                         serviceCategories?: unknown[];
                     };
@@ -2390,10 +2481,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.713Z */
+                            /** @default 2026-01-11T14:17:14.801Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2479,10 +2570,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.714Z */
+                            /** @default 2026-01-11T14:17:14.803Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2571,10 +2662,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.717Z */
+                            /** @default 2026-01-11T14:17:14.805Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2639,7 +2730,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-03T10:16:23.719Z */
+                        /** @default 2026-01-11T14:17:14.807Z */
                         publishedAt?: string;
                         youtubeGallery?: unknown;
                     };
@@ -2657,10 +2748,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.720Z */
+                            /** @default 2026-01-11T14:17:14.808Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2733,10 +2824,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.721Z */
+                            /** @default 2026-01-11T14:17:14.809Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2812,10 +2903,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.725Z */
+                            /** @default 2026-01-11T14:17:14.812Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -2824,7 +2915,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -2841,7 +2932,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2903,7 +2994,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-03T10:16:23.727Z */
+                        /** @default 2026-01-11T14:17:14.813Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -2921,10 +3012,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.728Z */
+                            /** @default 2026-01-11T14:17:14.814Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -2933,7 +3024,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -2950,7 +3041,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -3020,10 +3111,10 @@ export interface operations {
                         data: {
                             /** Format: uuid */
                             documentId: string;
-                            id: number;
+                            id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-03T10:16:23.730Z */
+                            /** @default 2026-01-11T14:17:14.819Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -3032,7 +3123,7 @@ export interface operations {
                                     image: {
                                         /** Format: uuid */
                                         documentId: string;
-                                        id: number;
+                                        id: string | number;
                                         name: string;
                                         alternativeText?: string;
                                         caption?: string;
@@ -3049,7 +3140,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-03T10:16:23.668Z */
+                                        /** @default 2026-01-11T14:17:14.749Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
