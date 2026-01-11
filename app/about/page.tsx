@@ -1,12 +1,12 @@
 import { MarkdownRenderer } from "@/components/markdown-renderer";
-import { Typography } from "@/components/typohraphy";
+import { PolaroidShuffle } from "@/components/polaroid-shuffle";
 import { getAboutPage } from "@/data/about";
-import Image from "next/image";
 
 export default async function AboutPage() {
   const aboutPage = await getAboutPage();
 
   const markdown = aboutPage?.data?.content;
+  const images = aboutPage?.data?.imageGallery?.images;
 
   return (
     <section className="container-fluid mx-auto my-8">
@@ -19,27 +19,14 @@ export default async function AboutPage() {
 
           {/* Content Sections */}
           <div>
-            <MarkdownRenderer markdown={markdown} />;
+            <MarkdownRenderer markdown={markdown} />
           </div>
         </div>
 
         {/* Image */}
         <div className="order-1 md:order-2 md:shrink-0 md:w-1/2 flex justify-center">
           <div className="w-full max-w-xl">
-            <Image
-              src="/images/about/2.jpg"
-              alt="Emanuel Della Pia"
-              width={1024}
-              height={1024}
-              className="w-full h-auto object-cover"
-            />
-            <Typography
-              variant="caption"
-              className="mt-2 text-xs uppercase tracking-wide"
-            >
-              PHOTOGRAPHING NELSON MANDELA IN CAPE TOWN, SOUTH AFRICA 1995 /
-              PHOTOGRAPH BY CHRIS LAWRENCE
-            </Typography>
+            <PolaroidShuffle images={images ?? []} />
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { getGlobal } from "@/data/global";
 import { routes } from "@/lib/routes";
 import type { Metadata } from "next";
-import { Geist_Mono, Lato } from "next/font/google";
+import { Caveat, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
 
 const lato = Lato({
@@ -19,6 +19,12 @@ const lato = Lato({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-handwriting",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,7 +41,7 @@ export default async function RootLayout({
 }: LayoutProps<typeof routes.home>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lato.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${lato.variable} ${geistMono.variable} ${caveat.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
