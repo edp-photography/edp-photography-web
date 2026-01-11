@@ -64,7 +64,7 @@ export function PolaroidShuffle({
 
   return (
     <div
-      className={cn(className, "relative w-full max-w-md mx-auto h-[500px]")}
+      className={cn(className, "relative w-full aspect-88/107")}
       {...props}
     >
       <AnimatePresence>
@@ -96,7 +96,7 @@ export function PolaroidShuffle({
                 duration: 0.8,
                 ease: [0.34, 1.56, 0.64, 1],
               }}
-              className="absolute inset-0"
+              className="absolute inset-0 flex items-center justify-center"
               style={{
                 transformOrigin: "center center",
               }}
