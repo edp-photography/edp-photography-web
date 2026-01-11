@@ -64,7 +64,7 @@ export function PolaroidShuffle({
 
   return (
     <div
-      className={cn(className, "relative w-full aspect-88/107")}
+      className={cn(className, "relative w-full aspect-88/107 overflow-hidden")}
       {...props}
     >
       <AnimatePresence>
