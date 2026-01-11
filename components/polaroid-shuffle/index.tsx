@@ -13,6 +13,8 @@ type PolaroidShuffleProps = {
 // Generate random rotation between -15 and 15 degrees
 const getRandomRotation = () => Math.random() * 30 - 15;
 
+const CARD_SHUFFLE_INTERVAL_MS = 3000;
+
 export function PolaroidShuffle({
   images,
   className,
@@ -55,7 +57,7 @@ export function PolaroidShuffle({
           return [...rest, { id: bottom.id, animKey: Date.now() }];
         });
       }
-    }, 3000);
+    }, CARD_SHUFFLE_INTERVAL_MS);
 
     return () => clearInterval(interval);
   }, [cards]);
@@ -64,7 +66,10 @@ export function PolaroidShuffle({
 
   return (
     <div
-      className={cn(className, "relative w-full aspect-88/107 overflow-hidden p-[15%]")}
+      className={cn(
+        className,
+        "relative w-full aspect-88/107 overflow-hidden p-[15%]"
+      )}
       {...props}
     >
       <AnimatePresence>

@@ -15,7 +15,7 @@ export function PolaroidCard({
   return (
     <div
       className={cn(
-        "bg-white dark:bg-neutral-100 shadow-lg",
+        "bg-white dark:bg-neutral-200 shadow-lg",
         // Polaroid card ratio
         "w-full aspect-88/107",
         // Responsive padding (Polaroid-accurate)

@@ -1,5 +1,5 @@
 import { MarkdownRenderer } from "@/components/markdown-renderer";
-import { PolaroidShuffle } from "@/components/polaroid-shuffle.tsx";
+import { PolaroidShuffle } from "@/components/polaroid-shuffle";
 import { getAboutPage } from "@/data/about";
 
 export default async function AboutPage() {
@@ -19,7 +19,7 @@ export default async function AboutPage() {
 
           {/* Content Sections */}
           <div>
-            <MarkdownRenderer markdown={markdown} />;
+            <MarkdownRenderer markdown={markdown} />
           </div>
         </div>
 
