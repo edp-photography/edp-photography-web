@@ -6,14 +6,7 @@ import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
 export default async function Home() {
   const homepageData = await getHomepageData();
 
-  const heroGalleryImages = homepageData.data.heroGallery.images.map(
-    (heroGalleryImage) => ({
-      title: heroGalleryImage.title,
-      description: heroGalleryImage.description,
-      alt: heroGalleryImage.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(heroGalleryImage.image.url),
-    })
-  );
+  const heroGalleryImages = homepageData.data.heroGallery.images;
 
   const photoGalleryImages = homepageData.data.imageGallery.images.map(
     (photoGalleryImage) => ({

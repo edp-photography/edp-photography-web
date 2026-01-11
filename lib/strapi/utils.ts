@@ -1,4 +1,4 @@
-import { env } from "@/config/env";
+import { env } from "@/env";
 
 export function resolveStrapiMediaUrl(url: string | null | undefined) {
   if (!url) return "";

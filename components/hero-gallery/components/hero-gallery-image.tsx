@@ -1,20 +1,16 @@
+import { GalleryImage as StrapiGalleryImage } from "@/lib/strapi/types/components";
+import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
 import Image from "next/image";
 
-export type HeroGalleryImageProps = Pick<
-  React.ComponentProps<typeof Image>,
-  "alt" | "priority" | "src"
-> & {
-  title: string;
-  description?: string;
-};
+export type HeroGalleryImageProps = StrapiGalleryImage &
+  Pick<React.ComponentProps<typeof Image>, "priority">;
 
 export function HeroGalleryImage({
   title,
   description,
-  alt,
-  src,
+  image,
   priority,
 }: HeroGalleryImageProps) {
   return (
@@ -22,9 +18,10 @@ export function HeroGalleryImage({
       {/* Image */}
       <Image
         fill
-        src={src}
+        src={resolveStrapiMediaUrl(image.url)}
         className="object-cover object-top"
-        alt={alt}
+        alt={image.alternativeText ?? ""}
+        aria-hidden={image.alternativeText ? false : true}
         priority={priority}
         quality={85}
       />

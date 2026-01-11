@@ -1,5 +1,5 @@
-import { env } from "@/config/env";
-import type { paths } from "@/lib/strapi/types";
+import { env } from "@/env";
+import type { paths } from "@/lib/strapi/types/generated";
 import { draftMode } from "next/headers";
 import qs from "qs";
 

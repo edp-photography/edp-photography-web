@@ -6,6 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { GalleryImage as StrapiGalleryImage } from "@/lib/strapi/types/components";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
@@ -14,7 +15,7 @@ import { useEffect, useState } from "react";
 import { HeroGalleryImage } from "./components/hero-gallery-image";
 
 type HeroGalleryProps = Omit<React.ComponentProps<"section">, "children"> & {
-  images: React.ComponentPropsWithRef<typeof HeroGalleryImage>[];
+  images: StrapiGalleryImage[];
 };
 
 const plugins = [
@@ -53,15 +54,9 @@ export function HeroGallery({ images, className, ...props }: HeroGalleryProps) {
         setApi={setApi}
       >
         <CarouselContent className="ml-0">
-          {images.map((image, index) => (
+          {images.map((galleryImage, index) => (
             <CarouselItem key={index} className="h-screen basis-full pl-0">
-              <HeroGalleryImage
-                src={image.src}
-                alt={image.alt}
-                title={image.title}
-                description={image.description}
-                priority={index === 0}
-              />
+              <HeroGalleryImage {...galleryImage} priority={index === 0} />
             </CarouselItem>
           ))}
         </CarouselContent>

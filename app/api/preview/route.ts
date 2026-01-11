@@ -1,4 +1,4 @@
-import { env } from "@/config/env";
+import { env } from "@/env";
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
 
