@@ -33,6 +33,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title: globalData.seo.metaTitle,
     description: globalData.seo.metaDescription,
     keywords: globalData.seo.keywords,
+    robots: globalData.seo.metaRobots,
+    viewport: globalData.seo.metaViewport,
+    alternates: {
+      canonical: globalData.seo.canonicalURL,
+    },
   };
 }
 
@@ -41,7 +46,9 @@ export default async function RootLayout({
 }: LayoutProps<typeof routes.home>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lato.variable} ${geistMono.variable} ${caveat.variable} antialiased`}>
+      <body
+        className={`${lato.variable} ${geistMono.variable} ${caveat.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
