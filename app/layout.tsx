@@ -5,6 +5,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { getGlobal } from "@/data/global";
 import { routes } from "@/lib/routes";
+import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
 import type { Metadata } from "next";
 import { Caveat, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
@@ -29,14 +30,45 @@ const caveat = Caveat({
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data: globalData } = await getGlobal();
+  const seo = globalData.seo;
+  const og = globalData.seo.openGraph;
+  const ogImage = og?.ogImage ?? seo?.metaImage;
+
   return {
-    title: globalData.seo.metaTitle,
-    description: globalData.seo.metaDescription,
-    keywords: globalData.seo.keywords,
-    robots: globalData.seo.metaRobots,
-    viewport: globalData.seo.metaViewport,
+    title: seo.metaTitle,
+    description: seo.metaDescription,
+    keywords: seo.keywords,
+    robots: seo.metaRobots,
+    viewport: seo.metaViewport,
     alternates: {
-      canonical: globalData.seo.canonicalURL,
+      canonical: seo.canonicalURL,
+    },
+    openGraph: {
+      title: og?.ogTitle ?? seo.metaTitle,
+      description: og?.ogDescription ?? seo.metaDescription,
+      url: og?.ogUrl ?? seo.canonicalURL,
+      type:
+        (og?.ogType as "website" | "article" | "book" | "profile") ?? "website",
+      images: ogImage && [
+        {
+          url: resolveStrapiMediaUrl(ogImage.url),
+          width: ogImage.width,
+          height: ogImage.height,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: og?.ogTitle ?? seo.metaTitle,
+      description: og?.ogDescription ?? seo.metaDescription,
+      images: ogImage && [
+        {
+          url: resolveStrapiMediaUrl(ogImage.url),
+          width: ogImage.width,
+          height: ogImage.height,
+        },
+      ],
     },
   };
 }
