@@ -37,7 +37,7 @@ export function DesktopMenuTrigger({
         <ChevronDown
           className={cn(
             "h-4 w-4 transition-transform duration-200",
-            open && "rotate-180"
+            open && "rotate-180",
           )}
           aria-hidden="true"
         />
@@ -64,7 +64,10 @@ export function DesktopMenu({
       {inactivePages.map((page) => (
         <li
           key={page.label}
-          className={cn(typography({ variant: "h6" }), "font-bold")}
+          className={cn(
+            typography({ variant: "h6", disableGutters: true }),
+            "font-bold",
+          )}
         >
           <Link
             href={page.href}
