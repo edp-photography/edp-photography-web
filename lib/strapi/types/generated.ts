@@ -84,6 +84,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/portraits-page": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["portraits-page/get/portraits_page"];
+        put: operations["portraits-page/put/portraits_page"];
+        post?: never;
+        delete: operations["portraits-page/delete/portraits_page"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/services-page": {
         parameters: {
             query?: never;
@@ -95,6 +111,22 @@ export interface paths {
         put: operations["services-page/put/services_page"];
         post?: never;
         delete: operations["services-page/delete/services_page"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/travel-page": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["travel-page/get/travel_page"];
+        put: operations["travel-page/put/travel_page"];
+        post?: never;
+        delete: operations["travel-page/delete/travel_page"];
         options?: never;
         head?: never;
         patch?: never;
@@ -608,7 +640,7 @@ export interface operations {
                             content?: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.743Z */
+                            /** @default 2026-01-17T14:02:35.568Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -634,7 +666,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -699,7 +731,7 @@ export interface operations {
                         title?: string;
                         quote?: string;
                         content?: string;
-                        /** @default 2026-01-11T14:17:14.753Z */
+                        /** @default 2026-01-17T14:02:35.578Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -723,7 +755,7 @@ export interface operations {
                             content?: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.754Z */
+                            /** @default 2026-01-17T14:02:35.579Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -749,7 +781,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -825,7 +857,7 @@ export interface operations {
                             content?: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.757Z */
+                            /** @default 2026-01-17T14:02:35.582Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -851,7 +883,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -927,7 +959,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.760Z */
+                            /** @default 2026-01-17T14:02:35.585Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -953,7 +985,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1015,7 +1047,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-11T14:17:14.762Z */
+                        /** @default 2026-01-17T14:02:35.587Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -1036,7 +1068,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.763Z */
+                            /** @default 2026-01-17T14:02:35.587Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1062,7 +1094,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1135,7 +1167,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.767Z */
+                            /** @default 2026-01-17T14:02:35.591Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1161,7 +1193,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1237,7 +1269,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.769Z */
+                            /** @default 2026-01-17T14:02:35.593Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1263,7 +1295,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1325,7 +1357,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-11T14:17:14.771Z */
+                        /** @default 2026-01-17T14:02:35.595Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -1346,7 +1378,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.772Z */
+                            /** @default 2026-01-17T14:02:35.596Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1372,7 +1404,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1445,7 +1477,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.773Z */
+                            /** @default 2026-01-17T14:02:35.597Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -1471,7 +1503,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1554,7 +1586,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.777Z */
+                            /** @default 2026-01-17T14:02:35.601Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1584,7 +1616,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2026-01-11T14:17:14.749Z */
+                                    /** @default 2026-01-17T14:02:35.574Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1613,7 +1645,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1682,7 +1714,7 @@ export interface operations {
                         googleMapsUrl?: string;
                         instagram?: string;
                         facebook?: string;
-                        /** @default 2026-01-11T14:17:14.781Z */
+                        /** @default 2026-01-17T14:02:35.605Z */
                         publishedAt?: string;
                         seo?: unknown;
                     };
@@ -1710,7 +1742,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.783Z */
+                            /** @default 2026-01-17T14:02:35.607Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1740,7 +1772,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2026-01-11T14:17:14.749Z */
+                                    /** @default 2026-01-17T14:02:35.574Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1769,7 +1801,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1849,7 +1881,7 @@ export interface operations {
                             facebook: string;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.785Z */
+                            /** @default 2026-01-17T14:02:35.609Z */
                             publishedAt: string;
                             seo: {
                                 metaTitle: string;
@@ -1879,7 +1911,7 @@ export interface operations {
                                     provider_metadata?: unknown;
                                     createdAt?: string;
                                     updatedAt?: string;
-                                    /** @default 2026-01-11T14:17:14.749Z */
+                                    /** @default 2026-01-17T14:02:35.574Z */
                                     publishedAt: string;
                                     related: unknown;
                                 };
@@ -1908,7 +1940,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -1984,7 +2016,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.787Z */
+                            /** @default 2026-01-17T14:02:35.612Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -2010,7 +2042,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2040,7 +2072,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2102,7 +2134,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-11T14:17:14.792Z */
+                        /** @default 2026-01-17T14:02:35.617Z */
                         publishedAt?: string;
                         heroGallery?: unknown;
                         imageGallery?: unknown;
@@ -2124,7 +2156,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.793Z */
+                            /** @default 2026-01-17T14:02:35.618Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -2150,7 +2182,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2180,7 +2212,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2253,7 +2285,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.795Z */
+                            /** @default 2026-01-17T14:02:35.619Z */
                             publishedAt: string;
                             heroGallery: {
                                 images: {
@@ -2279,7 +2311,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2309,7 +2341,317 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "portraits-page/get/portraits_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
+                filters?: {
+                    [key: string]: unknown;
+                };
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: string | number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-17T14:02:35.622Z */
+                            publishedAt: string;
+                            imageGallery: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-17T14:02:35.574Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "portraits-page/put/portraits_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": {
+                    data: {
+                        /** @default 2026-01-17T14:02:35.623Z */
+                        publishedAt?: string;
+                        imageGallery?: unknown;
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: string | number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-17T14:02:35.624Z */
+                            publishedAt: string;
+                            imageGallery: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-17T14:02:35.574Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "portraits-page/delete/portraits_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: string | number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-17T14:02:35.625Z */
+                            publishedAt: string;
+                            imageGallery: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2385,7 +2727,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.797Z */
+                            /** @default 2026-01-17T14:02:35.627Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2463,7 +2805,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-11T14:17:14.801Z */
+                        /** @default 2026-01-17T14:02:35.631Z */
                         publishedAt?: string;
                         serviceCategories?: unknown[];
                     };
@@ -2484,7 +2826,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.801Z */
+                            /** @default 2026-01-17T14:02:35.631Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2573,7 +2915,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.803Z */
+                            /** @default 2026-01-17T14:02:35.633Z */
                             publishedAt: string;
                             serviceCategories?: {
                                 title: string;
@@ -2595,6 +2937,316 @@ export interface operations {
                                     };
                                 }[];
                             }[];
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "travel-page/get/travel_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
+                filters?: {
+                    [key: string]: unknown;
+                };
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: string | number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-17T14:02:35.636Z */
+                            publishedAt: string;
+                            imageGallery: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-17T14:02:35.574Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "travel-page/put/travel_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": {
+                    data: {
+                        /** @default 2026-01-17T14:02:35.637Z */
+                        publishedAt?: string;
+                        imageGallery?: unknown;
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: string | number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-17T14:02:35.638Z */
+                            publishedAt: string;
+                            imageGallery: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-17T14:02:35.574Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
+                        };
+                    };
+                };
+            };
+            /** @description Bad request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "travel-page/delete/travel_page": {
+        parameters: {
+            query?: {
+                fields?: ("createdAt" | "updatedAt" | "publishedAt")[];
+                populate?: "*" | "imageGallery" | "imageGallery"[];
+                status?: "draft" | "published";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            /** Format: uuid */
+                            documentId: string;
+                            id: string | number;
+                            createdAt?: string;
+                            updatedAt?: string;
+                            /** @default 2026-01-17T14:02:35.642Z */
+                            publishedAt: string;
+                            imageGallery: {
+                                images: {
+                                    title: string;
+                                    description?: string;
+                                    image: {
+                                        /** Format: uuid */
+                                        documentId: string;
+                                        id: string | number;
+                                        name: string;
+                                        alternativeText?: string;
+                                        caption?: string;
+                                        width?: number;
+                                        height?: number;
+                                        formats?: unknown;
+                                        hash: string;
+                                        ext?: string;
+                                        mime: string;
+                                        size: number;
+                                        url: string;
+                                        previewUrl?: string;
+                                        provider: string;
+                                        provider_metadata?: unknown;
+                                        createdAt?: string;
+                                        updatedAt?: string;
+                                        /** @default 2026-01-17T14:02:35.574Z */
+                                        publishedAt: string;
+                                        related: unknown;
+                                    };
+                                }[];
+                            };
                         };
                     };
                 };
@@ -2665,7 +3317,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.805Z */
+                            /** @default 2026-01-17T14:02:35.644Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2730,7 +3382,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-11T14:17:14.807Z */
+                        /** @default 2026-01-17T14:02:35.646Z */
                         publishedAt?: string;
                         youtubeGallery?: unknown;
                     };
@@ -2751,7 +3403,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.808Z */
+                            /** @default 2026-01-17T14:02:35.647Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2827,7 +3479,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.809Z */
+                            /** @default 2026-01-17T14:02:35.648Z */
                             publishedAt: string;
                             youtubeGallery?: {
                                 youtubeEmbeds?: {
@@ -2906,7 +3558,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.812Z */
+                            /** @default 2026-01-17T14:02:35.651Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -2932,7 +3584,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -2994,7 +3646,7 @@ export interface operations {
             content: {
                 "application/json": {
                     data: {
-                        /** @default 2026-01-11T14:17:14.813Z */
+                        /** @default 2026-01-17T14:02:35.652Z */
                         publishedAt?: string;
                         imageGallery?: unknown;
                     };
@@ -3015,7 +3667,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.814Z */
+                            /** @default 2026-01-17T14:02:35.653Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -3041,7 +3693,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
@@ -3114,7 +3766,7 @@ export interface operations {
                             id: string | number;
                             createdAt?: string;
                             updatedAt?: string;
-                            /** @default 2026-01-11T14:17:14.819Z */
+                            /** @default 2026-01-17T14:02:35.654Z */
                             publishedAt: string;
                             imageGallery?: {
                                 images: {
@@ -3140,7 +3792,7 @@ export interface operations {
                                         provider_metadata?: unknown;
                                         createdAt?: string;
                                         updatedAt?: string;
-                                        /** @default 2026-01-11T14:17:14.749Z */
+                                        /** @default 2026-01-17T14:02:35.574Z */
                                         publishedAt: string;
                                         related: unknown;
                                     };
