@@ -17,5 +17,6 @@ export const mainNav: readonly NavItem[] = [
   { label: "Travel", href: routes.travel },
   { label: "Videoclips", href: routes.videoclips },
   { label: "Workshops", href: routes.workshops },
+  { label: "Glamour", href: routes.glamour },
   { label: "Contact", href: routes.contact },
 ];

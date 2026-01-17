@@ -10,5 +10,6 @@ export const routes = {
   travel: "/travel",
   weddings: "/weddings",
   workshops: "/workshops",
+  glamour: "/glamour",
   videoclips: "/videoclips",
 } as const;
