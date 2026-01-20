@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { getGlobal } from "@/data/global";
 import { routes } from "@/lib/routes";
 import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Caveat, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +28,11 @@ const caveat = Caveat({
   weight: ["400", "500", "600", "700"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export async function generateMetadata(): Promise<Metadata> {
   const { data: globalData } = await getGlobal();
   const seo = globalData.seo;
@@ -39,7 +44,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: seo.metaDescription,
     keywords: seo.keywords,
     robots: seo.metaRobots,
-    viewport: seo.metaViewport,
     alternates: {
       canonical: seo.canonicalURL,
     },
