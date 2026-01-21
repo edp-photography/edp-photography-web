@@ -7,10 +7,10 @@ export default async function PortraitsPage() {
 
   const photoGalleryImages = portraitsPage.data.imageGallery?.images?.map(
     (image) => ({
-      title: image.title,
-      description: image.description,
-      alt: image.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
+      title: image?.title,
+      description: image?.description,
+      alt: image?.image?.alternativeText ?? "",
+      src: resolveStrapiMediaUrl(image?.image.url),
       width: image.image.width!,
       height: image.image.height!,
     }),
