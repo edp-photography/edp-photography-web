@@ -13,17 +13,24 @@ export function HeroGalleryImage({
   image,
   priority,
 }: HeroGalleryImageProps) {
+  const blurDataURL =
+    image?.formats?.thumbnail?.url &&
+    resolveStrapiMediaUrl(image.formats.thumbnail.url);
+
   return (
     <figure className="group relative w-screen h-screen overlay-neutral-y">
       {/* Image */}
       <Image
         fill
         src={resolveStrapiMediaUrl(image.url)}
-        className="object-cover object-top"
         alt={image.alternativeText ?? ""}
-        aria-hidden={image.alternativeText ? false : true}
+        aria-hidden={!image.alternativeText}
+        className="object-cover object-top"
         priority={priority}
         quality={85}
+        placeholder={blurDataURL ? "blur" : "empty"}
+        blurDataURL={blurDataURL}
+        sizes="100vw"
       />
       <div className="absolute inset-0 overlay-neutral-y" />
       <figcaption className="absolute inset-x-0 bottom-0">
@@ -31,7 +38,7 @@ export function HeroGalleryImage({
           <h3
             className={cn(
               typography({ variant: "h5", disableGutters: true }),
-              "font-bold"
+              "font-bold",
             )}
           >
             {title}
@@ -39,7 +46,7 @@ export function HeroGalleryImage({
           {description ? (
             <p
               className={cn(
-                typography({ variant: "h6", disableGutters: true })
+                typography({ variant: "h6", disableGutters: true }),
               )}
             >
               {description}
