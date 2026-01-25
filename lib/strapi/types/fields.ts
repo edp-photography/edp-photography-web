@@ -1,4 +1,4 @@
-export type StrapiImageFormat = {
+type StrapiImageFormat = {
   name: string;
   hash: string;
   ext: string;
@@ -9,20 +9,34 @@ export type StrapiImageFormat = {
   url: string;
 };
 
-export type StrapiImageFormats = Partial<{
-  thumbnail: StrapiImageFormat;
-  small: StrapiImageFormat;
-  medium: StrapiImageFormat;
-  large: StrapiImageFormat;
-}>;
+export type StrapiImageFormats =
+  | Partial<{
+      thumbnail: StrapiImageFormat;
+      small: StrapiImageFormat;
+      medium: StrapiImageFormat;
+      large: StrapiImageFormat;
+    }>
+  | undefined;
 
 export type StrapiImage = {
-  id: number;
+  documentId: string;
+  id: string | number;
   name: string;
-  alternativeText?: string | null;
-  caption?: string | null;
-  width: number;
-  height: number;
-  formats?: StrapiImageFormats | null;
+  alternativeText?: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+  formats?: unknown;
+  hash: string;
+  ext?: string;
+  mime: string;
+  size: number;
   url: string;
+  previewUrl?: string;
+  provider: string;
+  provider_metadata?: unknown;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt: string;
+  related: unknown;
 };

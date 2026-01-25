@@ -66,7 +66,7 @@ export function HeroGallery({ images, className, ...props }: HeroGalleryProps) {
           <ChevronDown
             className={cn(
               "size-20 text-white motion-safe:animate-bounce-fade p-2",
-              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
             )}
             strokeWidth={0.5}
             aria-hidden
@@ -78,7 +78,7 @@ export function HeroGallery({ images, className, ...props }: HeroGalleryProps) {
                 onClick={() => api?.scrollTo(index)}
                 className={cn(
                   "w-2 h-2 rounded-full border border-white transition-colors",
-                  current === index ? "bg-white" : "bg-transparent"
+                  current === index ? "bg-white" : "bg-transparent",
                 )}
                 aria-label={`Go to image ${index + 1}`}
               />

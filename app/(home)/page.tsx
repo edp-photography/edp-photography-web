@@ -16,7 +16,7 @@ export default async function Home() {
       src: resolveStrapiMediaUrl(photoGalleryImage.image.url),
       width: photoGalleryImage.image.width!,
       height: photoGalleryImage.image.height!,
-    })
+    }),
   );
 
   return (

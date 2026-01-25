@@ -1,4 +1,5 @@
 import { GalleryImage as StrapiGalleryImage } from "@/lib/strapi/types/components";
+import { StrapiImageFormats } from "@/lib/strapi/types/fields";
 import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
@@ -13,9 +14,8 @@ export function HeroGalleryImage({
   image,
   priority,
 }: HeroGalleryImageProps) {
-  const blurDataURL =
-    image?.formats?.thumbnail?.url &&
-    resolveStrapiMediaUrl(image.formats.thumbnail.url);
+  const formats = image?.formats as StrapiImageFormats;
+  const blurDataURL = resolveStrapiMediaUrl(formats?.thumbnail?.url);
 
   return (
     <figure className="group relative w-screen h-screen overlay-neutral-y">
