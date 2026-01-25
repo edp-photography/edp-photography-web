@@ -13,7 +13,9 @@ export default async function VideoclipsPage() {
       <h2 className={cn(typography({ variant: "h2" }), "mb-8 text-center")}>
         VIDEOCLIPS
       </h2>
-      {youtubeGalleryItems && <YoutubeGallery items={youtubeGalleryItems} />}
+      {youtubeGalleryItems && youtubeGalleryItems.length > 0 && (
+        <YoutubeGallery items={youtubeGalleryItems} />
+      )}
     </section>
   );
 }

@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 export type YoutubeEmbedType = {
   title: string;
+  description?: string;
   url: string;
 };
 
