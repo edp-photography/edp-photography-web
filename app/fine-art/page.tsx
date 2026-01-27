@@ -9,11 +9,11 @@ export default async function FineArtPage() {
     (image) => ({
       title: image.title,
       description: image.description,
-      alt: image.image.alternativeText ?? "",
+      alt: image.image?.alternativeText ?? "",
       src: resolveStrapiMediaUrl(image.image.url),
       width: image.image.width!,
       height: image.image.height!,
-    })
+    }),
   );
 
   return (
