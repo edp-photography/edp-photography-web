@@ -10,9 +10,9 @@ export default async function FineArtPage() {
       title: image.title,
       description: image.description,
       alt: image.image?.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
-      width: image.image.width!,
-      height: image.image.height!,
+      src: resolveStrapiMediaUrl(image.image?.url),
+      width: image.image?.width ?? 0,
+      height: image.image?.height ?? 0,
     }),
   );
 
