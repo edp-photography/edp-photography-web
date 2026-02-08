@@ -63,6 +63,11 @@ export function PolaroidShuffle({
 
   if (cards.length === 0) return null;
 
+  // Determine next card for preloading
+  const nextCardIndex =
+    visibleCards.length < cards.length ? visibleCards.length : 0;
+  const nextCardId = cards[nextCardIndex]?.id;
+
   return (
     <div
       className={cn(
@@ -105,7 +110,13 @@ export function PolaroidShuffle({
                 transformOrigin: "center center",
               }}
             >
-              <PolaroidCard {...card} />
+              <PolaroidCard
+                {...card}
+                preload={
+                  stackIndex === visibleCards.length - 1 ||
+                  visibleCard.id === nextCardId
+                }
+              />
             </motion.div>
           );
         })}

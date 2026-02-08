@@ -2,12 +2,16 @@ import { StrapiImage } from "@/components/strapi-image";
 import { GalleryImage } from "@/lib/strapi/types/components";
 import { cn } from "@/lib/utils";
 
-type PolaroidCardProps = React.ComponentProps<"div"> & GalleryImage;
+type PolaroidCardProps = React.ComponentProps<"div"> &
+  GalleryImage & {
+    preload?: boolean;
+  };
 
 export function PolaroidCard({
   title,
   description,
   image,
+  preload,
   className,
   ...props
 }: PolaroidCardProps) {
@@ -30,6 +34,7 @@ export function PolaroidCard({
           format="medium"
           fill
           className="object-cover object-top"
+          preload={preload}
         />
       </div>
 
