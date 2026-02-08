@@ -1,8 +1,8 @@
 import { Link } from "@/components/link";
 import { getGlobal } from "@/data/global";
+import { ContactForm } from "@/feature/contact/components/contact-form";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
-import { ContactForm } from "./components/contact-form";
 
 export default async function ContactPage() {
   const { data: globalData } = await getGlobal();

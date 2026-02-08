@@ -1,10 +1,6 @@
-"use client";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-const contactSchema = z.object({
+export const contactFormSchema = z.object({
   name: z
     .string("Name is required")
     .max(100, "Name must not exceed 100 characters")
@@ -22,10 +18,4 @@ const contactSchema = z.object({
     .trim(),
 });
 
-export type ContactFieldValues = z.infer<typeof contactSchema>;
-
-export function useContactForm() {
-  return useForm({
-    resolver: zodResolver(contactSchema),
-  });
-}
+export type ContactFormFieldValues = z.infer<typeof contactFormSchema>;
