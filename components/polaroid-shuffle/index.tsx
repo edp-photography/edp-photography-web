@@ -1,14 +1,14 @@
 "use client";
 
-import { GalleryImage as StrapiGalleryImage } from "@/lib/strapi/types/components";
+import { GalleryImage } from "@/lib/strapi/types/components";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { PolaroidCard } from "./components/polaroid-card";
 
-type PolaroidShuffleProps = {
-  images: StrapiGalleryImage[];
-} & React.ComponentProps<"div">;
+type PolaroidShuffleProps = React.ComponentProps<"div"> & {
+  images: GalleryImage[];
+};
 
 // Generate random rotation between -15 and 15 degrees
 const getRandomRotation = () => Math.random() * 30 - 15;
@@ -21,14 +21,13 @@ export function PolaroidShuffle({
   ...props
 }: PolaroidShuffleProps) {
   // Initialize cards with unique IDs and rotations
-  const [cards] = useState<
-    (StrapiGalleryImage & { id: string; rotation: number })[]
-  >(() =>
-    images.map((img, idx) => ({
-      ...img,
-      id: `card-${idx}`,
-      rotation: getRandomRotation(),
-    }))
+  const [cards] = useState<(GalleryImage & { id: string; rotation: number })[]>(
+    () =>
+      images.map((img, idx) => ({
+        ...img,
+        id: `card-${idx}`,
+        rotation: getRandomRotation(),
+      })),
   );
 
   // Track visible cards with animation counter for forcing re-animation
@@ -68,7 +67,7 @@ export function PolaroidShuffle({
     <div
       className={cn(
         className,
-        "relative w-full aspect-88/107 overflow-hidden p-[15%]"
+        "relative w-full aspect-88/107 overflow-hidden p-[15%]",
       )}
       {...props}
     >

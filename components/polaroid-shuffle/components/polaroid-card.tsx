@@ -1,9 +1,8 @@
+import { StrapiImage } from "@/components/strapi-image";
 import { GalleryImage } from "@/lib/strapi/types/components";
-import { toAbsoluteUrl } from "@/lib/strapi/utils";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
-type PolaroidCardProps = GalleryImage & React.ComponentProps<"div">;
+type PolaroidCardProps = React.ComponentProps<"div"> & GalleryImage;
 
 export function PolaroidCard({
   title,
@@ -26,13 +25,11 @@ export function PolaroidCard({
     >
       {/* Photo area */}
       <div className="relative w-full aspect-square overflow-hidden bg-neutral-200">
-        <Image
-          src={toAbsoluteUrl(image.url)}
-          alt={image.alternativeText ?? ""}
-          aria-hidden={!image.alternativeText}
+        <StrapiImage
+          image={image}
+          format="medium"
           fill
           className="object-cover object-top"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
 
