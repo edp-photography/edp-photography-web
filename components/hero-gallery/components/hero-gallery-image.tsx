@@ -1,36 +1,34 @@
-import { GalleryImage as StrapiGalleryImage } from "@/lib/strapi/types/components";
-import { StrapiImageFormats } from "@/lib/strapi/types/fields";
-import { toAbsoluteUrl } from "@/lib/strapi/utils";
+import { StrapiImage } from "@/components/strapi-image";
+import { GalleryImage } from "@/lib/strapi/types/components";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
-import Image from "next/image";
 
-export type HeroGalleryImageProps = StrapiGalleryImage &
-  Pick<React.ComponentProps<typeof Image>, "priority">;
+export type HeroGalleryImageProps = GalleryImage & {
+  preload?: boolean;
+};
 
 export function HeroGalleryImage({
   title,
   description,
   image,
-  priority,
+  preload,
 }: HeroGalleryImageProps) {
-  const formats = image?.formats as StrapiImageFormats;
-  const blurDataURL = toAbsoluteUrl(formats?.thumbnail?.url);
-
   return (
     <figure className="group relative w-screen h-screen overlay-neutral-y">
       {/* Image */}
-      <Image
+      <StrapiImage
+        image={image}
+        format="medium"
         fill
-        src={toAbsoluteUrl(image.url)}
-        alt={image.alternativeText ?? ""}
-        aria-hidden={!image.alternativeText}
-        className="object-cover object-top"
-        priority={priority}
-        quality={85}
-        placeholder={blurDataURL ? "blur" : "empty"}
-        blurDataURL={blurDataURL}
-        sizes="100vw"
+        className="object-cover object-top md:hidden"
+        preload={preload}
+      />
+      <StrapiImage
+        image={image}
+        format="large"
+        fill
+        className="object-cover object-top max-md:hidden"
+        preload={preload}
       />
       <div className="absolute inset-0 overlay-neutral-y" />
       <figcaption className="absolute inset-x-0 bottom-0">
