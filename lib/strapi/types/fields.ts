@@ -40,3 +40,5 @@ export type StrapiImage = {
   publishedAt: string;
   related: unknown;
 };
+
+export type StrapiMedia = StrapiImage;

@@ -1,6 +1,6 @@
 import { PhotoGallery } from "@/components/photo-gallery";
 import { getGlamourPage } from "@/data/glamour";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 
 export default async function GlamourPage() {
   const glamourPage = await getGlamourPage();
@@ -10,7 +10,7 @@ export default async function GlamourPage() {
       title: image.title,
       description: image.description,
       alt: image.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
+      src: toAbsoluteUrl(image.image.url),
       width: image.image.width!,
       height: image.image.height!,
     }),

@@ -1,6 +1,6 @@
 import { PhotoGallery } from "@/components/photo-gallery";
 import { getTravelPage } from "@/data/travel";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 
 export default async function TravelPage() {
   const travelPage = await getTravelPage();
@@ -10,7 +10,7 @@ export default async function TravelPage() {
       title: image.title,
       description: image.description,
       alt: image.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
+      src: toAbsoluteUrl(image.image.url),
       width: image.image.width!,
       height: image.image.height!,
     }),

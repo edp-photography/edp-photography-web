@@ -1,5 +1,5 @@
 import { GalleryImage } from "@/lib/strapi/types/components";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -20,14 +20,14 @@ export function PolaroidCard({
         "w-full aspect-88/107",
         // Responsive padding (Polaroid-accurate)
         "p-[6%_4.5%_18%]",
-        className
+        className,
       )}
       {...props}
     >
       {/* Photo area */}
       <div className="relative w-full aspect-square overflow-hidden bg-neutral-200">
         <Image
-          src={resolveStrapiMediaUrl(image.url)}
+          src={toAbsoluteUrl(image.url)}
           alt={image.alternativeText ?? ""}
           aria-hidden={!image.alternativeText}
           fill

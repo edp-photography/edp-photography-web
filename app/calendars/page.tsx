@@ -1,5 +1,5 @@
 import { getCalendarsPage } from "@/data/calendars";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
 import Image from "next/image";
@@ -12,7 +12,7 @@ export default async function CalendarsPage() {
       title: image.title,
       description: image.description,
       alt: image.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
+      src: toAbsoluteUrl(image.image.url),
       width: image.image.width!,
       height: image.image.height!,
     }),

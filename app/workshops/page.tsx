@@ -1,6 +1,6 @@
 import { PhotoGallery } from "@/components/photo-gallery";
 import { getWorkshopsPage } from "@/data/workshops";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 
 export default async function WorkshopsPage() {
   const workshopsPage = await getWorkshopsPage();
@@ -10,10 +10,10 @@ export default async function WorkshopsPage() {
       title: image.title,
       description: image.description,
       alt: image.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
+      src: toAbsoluteUrl(image.image.url),
       width: image.image.width!,
       height: image.image.height!,
-    })
+    }),
   );
 
   return (

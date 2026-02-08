@@ -5,7 +5,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { getGlobal } from "@/data/global";
 import { routes } from "@/lib/routes";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 import type { Metadata, Viewport } from "next";
 import { Caveat, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
@@ -55,7 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
         (og?.ogType as "website" | "article" | "book" | "profile") ?? "website",
       images: ogImage && [
         {
-          url: resolveStrapiMediaUrl(ogImage.url),
+          url: toAbsoluteUrl(ogImage.url),
           width: ogImage.width,
           height: ogImage.height,
         },
@@ -68,7 +68,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: og?.ogDescription ?? seo.metaDescription,
       images: ogImage && [
         {
-          url: resolveStrapiMediaUrl(ogImage.url),
+          url: toAbsoluteUrl(ogImage.url),
           width: ogImage.width,
           height: ogImage.height,
         },

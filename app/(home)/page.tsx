@@ -1,7 +1,7 @@
 import { HeroGallery } from "@/components/hero-gallery";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { getHomepageData } from "@/data/homepage";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 
 export default async function Home() {
   const homepageData = await getHomepageData();
@@ -13,7 +13,7 @@ export default async function Home() {
       title: photoGalleryImage.title,
       description: photoGalleryImage.description,
       alt: photoGalleryImage.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(photoGalleryImage.image.url),
+      src: toAbsoluteUrl(photoGalleryImage.image.url),
       width: photoGalleryImage.image.width!,
       height: photoGalleryImage.image.height!,
     }),

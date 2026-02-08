@@ -1,6 +1,6 @@
 import { PhotoGallery } from "@/components/photo-gallery";
 import { getFashionPage } from "@/data/fashion";
-import { resolveStrapiMediaUrl } from "@/lib/strapi/utils";
+import { toAbsoluteUrl } from "@/lib/strapi/utils";
 
 export default async function FashionPage() {
   const fashionPage = await getFashionPage();
@@ -10,10 +10,10 @@ export default async function FashionPage() {
       title: image.title,
       description: image.description,
       alt: image.image.alternativeText ?? "",
-      src: resolveStrapiMediaUrl(image.image.url),
+      src: toAbsoluteUrl(image.image.url),
       width: image.image.width!,
       height: image.image.height!,
-    })
+    }),
   );
 
   return (
