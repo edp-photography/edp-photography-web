@@ -7,7 +7,7 @@ import {
   RowsPhotoAlbum,
 } from "react-photo-album";
 import "react-photo-album/rows.css";
-import { GalleryImage } from "./gallery-image";
+import { GalleryImage } from "./components/gallery-image";
 
 type PhotoGalleryImage = Photo & {
   title?: string;
@@ -16,7 +16,7 @@ type PhotoGalleryImage = Photo & {
 
 function renderNextImage(
   { alt = "", title, sizes }: RenderImageProps,
-  { photo, width, height, index }: RenderImageContext<PhotoGalleryImage>
+  { photo, width, height, index }: RenderImageContext<PhotoGalleryImage>,
 ) {
   return (
     <GalleryImage
