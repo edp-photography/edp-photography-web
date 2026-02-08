@@ -1,20 +1,10 @@
 import { PhotoGallery } from "@/components/photo-gallery";
 import { getFineArtPage } from "@/data/fine-art";
-import { toAbsoluteUrl } from "@/lib/strapi/utils";
 
 export default async function FineArtPage() {
   const fineArtPage = await getFineArtPage();
 
-  const photoGalleryImages = fineArtPage.data.imageGallery?.images?.map(
-    (image) => ({
-      title: image.title,
-      description: image.description,
-      alt: image.image?.alternativeText ?? "",
-      src: toAbsoluteUrl(image.image?.url),
-      width: image.image?.width ?? 0,
-      height: image.image?.height ?? 0,
-    }),
-  );
+  const photoGalleryImages = fineArtPage.data.imageGallery?.images ?? [];
 
   return (
     <section>

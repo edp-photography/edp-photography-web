@@ -1,5 +1,6 @@
 "use client";
 
+import { GalleryImage as GalleryImageType } from "@/lib/strapi/types/components";
 import {
   Photo,
   RenderImageContext,
@@ -7,40 +8,29 @@ import {
   RowsPhotoAlbum,
 } from "react-photo-album";
 import "react-photo-album/rows.css";
-import { GalleryImage } from "./components/gallery-image";
-
-type PhotoGalleryImage = Photo & {
-  title?: string;
-  description?: string;
-};
-
-function renderNextImage(
-  { alt = "", title, sizes }: RenderImageProps,
-  { photo, width, height, index }: RenderImageContext<PhotoGalleryImage>,
-) {
-  return (
-    <GalleryImage
-      alt={alt}
-      title={title}
-      description={photo.description}
-      sizes={sizes}
-      src={photo.src}
-      width={width}
-      height={height}
-      priority={index < 3}
-    />
-  );
-}
+import { GalleryImage as GalleryImageComponent } from "./components/gallery-image";
 
 type PhotoGalleryProps = {
-  images: PhotoGalleryImage[];
+  images: GalleryImageType[];
 };
 
 export function PhotoGallery({ images }: PhotoGalleryProps) {
+  // format to Photo with extended image data
+  const photos: PhotoGalleryImage[] = images.map(
+    ({ image, title, description }) => ({
+      title: title,
+      description: description,
+      image: image, // pass image data so that we can use the different formats from Strapi
+      width: image.width!,
+      height: image.height!,
+      src: "", // Needs to be passed for Photo interface compatibility but I won't use it, I will use image data
+    }),
+  );
+
   return (
     <>
       <RowsPhotoAlbum
-        photos={images}
+        photos={photos}
         render={{ image: renderNextImage }}
         spacing={0}
         padding={0}
@@ -59,5 +49,23 @@ export function PhotoGallery({ images }: PhotoGalleryProps) {
         }}
       />
     </>
+  );
+}
+
+type PhotoGalleryImage = Photo & GalleryImageType;
+
+function renderNextImage(
+  {}: RenderImageProps,
+  { photo, width, height, index }: RenderImageContext<PhotoGalleryImage>,
+) {
+  return (
+    <GalleryImageComponent
+      title={photo.title}
+      description={photo.description}
+      image={photo.image}
+      width={width}
+      height={height}
+      preload={index < 3}
+    />
   );
 }

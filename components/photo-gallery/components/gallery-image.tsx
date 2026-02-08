@@ -1,25 +1,21 @@
+import { StrapiImage } from "@/components/strapi-image";
+import { GalleryImage as GalleryImageType } from "@/lib/strapi/types/components";
 import { cn } from "@/lib/utils";
 import { typography } from "@/lib/variants/typography";
-import Image from "next/image";
 
-type GalleryImageProps = Pick<
-  React.ComponentProps<typeof Image>,
-  "src" | "alt" | "sizes" | "width" | "height" | "priority" | "blurDataURL"
-> & {
-  title?: string;
-  description?: string;
+type GalleryImageProps = GalleryImageType & {
+  width: number;
+  height: number;
+  preload?: boolean;
 };
 
 export function GalleryImage({
-  alt,
+  image,
   title,
   description,
-  sizes,
-  src,
   width,
   height,
-  priority,
-  blurDataURL,
+  preload,
 }: GalleryImageProps) {
   return (
     <figure
@@ -30,15 +26,19 @@ export function GalleryImage({
     >
       {/* Image */}
       <div className="relative w-full h-full">
-        <Image
+        <StrapiImage
+          image={image}
+          format="medium"
           fill
-          placeholder={blurDataURL ? "blur" : "empty"}
-          className="object-cover"
-          blurDataURL={blurDataURL}
-          priority={priority}
-          src={src}
-          alt={alt}
-          sizes={sizes}
+          className="object-cover md:hidden"
+          preload={preload}
+        />
+        <StrapiImage
+          image={image}
+          format="large"
+          fill
+          className="object-cover max-md:hidden"
+          preload={preload}
         />
       </div>
       <figcaption
@@ -54,7 +54,7 @@ export function GalleryImage({
         <h3
           className={cn(
             typography({ variant: "h6", disableGutters: true }),
-            "font-bold"
+            "font-bold",
           )}
         >
           {title}
@@ -63,7 +63,7 @@ export function GalleryImage({
           <p
             className={cn(
               typography({ variant: "caption", disableGutters: true }),
-              "uppercase"
+              "uppercase",
             )}
           >
             {description}
